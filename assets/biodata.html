@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Subedi - Full Profile</title>
+  <style>
+    :root {
+      --accent: #2563eb;
+      --text: #111827;
+      --sub: #6b7280;
+      --border: #e5e7eb;
+      --bg: #f3f4f6;
+      --green: #059669;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 2rem auto;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* ── Header ─────────────────────────────────────── */
+    .hd-name { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; }
+    .hd-title { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-top: 0.25rem; }
+    .hd-contacts {
+      display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem;
+      margin-top: 0.65rem; font-size: 0.84rem; color: var(--sub);
+    }
+    .hd-contacts a { color: var(--accent); text-decoration: none; }
+    .hd-contacts a:hover { text-decoration: underline; }
+
+    /* ── Section headings ────────────────────────────── */
+    section { margin-top: 1.65rem; }
+    h2 {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    /* ── Summary ─────────────────────────────────────── */
+    .summary p { font-size: 0.9rem; line-height: 1.65; }
+
+    /* ── Education ───────────────────────────────────── */
+    .edu-entry { margin-bottom: 0.65rem; }
+    .two-col { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+    .two-col strong { font-size: 0.92rem; }
+    .date { font-size: 0.8rem; color: var(--sub); white-space: nowrap; flex-shrink: 0; }
+    .inst-line { font-size: 0.84rem; color: var(--sub); }
+    .gpa { font-size: 0.82rem; color: var(--green); font-weight: 700; }
+    .thesis-line { font-size: 0.84rem; margin-top: 0.15rem; }
+
+    /* ── Experience ──────────────────────────────────── */
+    .exp-entry { margin-bottom: 1rem; }
+    .exp-title { font-weight: 700; font-size: 0.92rem; }
+    .exp-org { font-size: 0.83rem; color: var(--sub); margin-bottom: 0.3rem; }
+    .sub-label {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--sub);
+      margin: 0.4rem 0 0.2rem;
+    }
+    ul { padding-left: 1.25em; }
+    li { font-size: 0.87rem; margin-bottom: 0.2rem; line-height: 1.5; }
+
+    /* ── Projects ────────────────────────────────────── */
+    .proj-entry { margin-bottom: 0.85rem; }
+    .proj-title { font-size: 0.9rem; font-weight: 700; }
+    .tags { margin: 0.15rem 0 0.25rem; }
+    .tag {
+      display: inline-block;
+      background: #eff6ff; color: var(--accent);
+      font-size: 0.7rem; font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin: 0.1rem 0.2rem 0.1rem 0;
+    }
+
+    /* ── Skills ──────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 0.4rem 0.8rem;
+      align-items: baseline;
+    }
+    .sk-cat { font-weight: 700; font-size: 0.85rem; }
+    .sk-val { font-size: 0.87rem; }
+
+    /* ── Publication ─────────────────────────────────── */
+    .pub-entry { font-size: 0.87rem; line-height: 1.65; }
+    .pub-entry a { color: var(--accent); }
+
+    /* ── Awards / Certs ──────────────────────────────── */
+    .award-entry, .cert-entry { margin-bottom: 0.55rem; }
+    .award-name, .cert-name { font-size: 0.9rem; font-weight: 700; }
+    .award-meta, .cert-meta { font-size: 0.82rem; color: var(--sub); margin-top: 0.05rem; }
+
+    /* ── Leadership ──────────────────────────────────── */
+    .lead-entry { margin-bottom: 0.6rem; }
+
+    /* ── Print button ────────────────────────────────── */
+    .btn-row { text-align: center; margin-top: 2rem; }
+    .print-btn {
+      background: var(--accent); color: #fff;
+      border: none; border-radius: 6px;
+      padding: 0.6rem 2rem;
+      font-size: 0.9rem; font-weight: 600;
+      cursor: pointer; letter-spacing: 0.02em;
+    }
+    .print-btn:hover { background: #1d4ed8; }
+
+    /* ── Print ───────────────────────────────────────── */
+    @media print {
+      body { background: #fff; }
+      .page {
+        margin: 0; border: none; box-shadow: none;
+        border-radius: 0; padding: 1.4cm 1.8cm;
+        max-width: none;
+      }
+      .btn-row { display: none; }
+      a { color: inherit !important; text-decoration: none !important; }
+      h2 { color: #000; border-bottom-color: #000; }
+      .tag { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
+      section { page-break-inside: avoid; }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 1.5rem; margin: 0; border-radius: 0; border: none; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .skills-grid .sk-val { margin-bottom: 0.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="hd-name">Abhishek Subedi</div>
+    <div class="hd-title">MS Mechanical Engineering Candidate &middot; University of Toledo &middot; Dec 2026</div>
+    <div class="hd-contacts">
+      <span>Toledo, OH, USA</span>
+      <span>+1 (419) 290 8356</span>
+      <a href="mailto:subediavishek@gmail.com">subediavishek@gmail.com</a>
+      <a href="https://linkedin.com/in/abhishek-subedi-073a36193" target="_blank">LinkedIn Profile</a>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <h2>Professional Summary</h2>
+    <p>
+      Graduate Mechanical Engineering researcher (GPA 4.0/4.0) with hands-on experience in experimental fluid mechanics,
+      CAD design, and thermal-fluid systems. Conducting original thesis research on drag coefficients in particle-laden
+      supersonic flow using Schlieren imaging and PIV/PTV at the University of Toledo. Proficient in SolidWorks
+      (CSWA Certified), Ansys Fluent, LabVIEW, and Python-based data analysis. Industry background spans airport
+      mechanical engineering, automotive servicing, and EV system architecture. Published researcher open to roles
+      in mechanical design, thermal engineering, R&amp;D, and aerospace.
+    </p>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+
+    <div class="edu-entry">
+      <div class="two-col">
+        <strong>M.S. in Mechanical Engineering</strong>
+        <span class="date">Jan 2025 &ndash; Dec 2026 (Expected)</span>
+      </div>
+      <div class="inst-line">University of Toledo, Toledo, OH</div>
+      <div class="gpa">GPA: 4.0 / 4.0</div>
+      <div class="thesis-line">Thesis: <em>Study of Coefficient of Drag in Particle-Laden Supersonic Flow</em></div>
+    </div>
+
+    <div class="edu-entry" style="margin-top:0.7rem;">
+      <div class="two-col">
+        <strong>B.E. in Mechanical Engineering</strong>
+        <span class="date">Aug 2018 &ndash; May 2023</span>
+      </div>
+      <div class="inst-line">Kathmandu University, Dhulikhel, Nepal</div>
+      <div class="gpa">GPA: 3.5 / 4.0</div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2>Experience</h2>
+
+    <div class="exp-entry">
+      <div class="two-col">
+        <span class="exp-title">Graduate Research &amp; Teaching Assistant</span>
+        <span class="date">Jan 2025 &ndash; Present</span>
+      </div>
+      <div class="exp-org">University of Toledo, Toledo, OH</div>
+      <div class="sub-label">Research</div>
+      <ul>
+        <li>Designing and operating a supersonic wind tunnel to experimentally investigate drag coefficients in particle-laden supersonic flow; applying Schlieren imaging for flow visualization and PIV/PTV for quantitative velocity field measurements; responsible for wind tunnel design, supersonic flow generation, optical alignment, and multi-modal data acquisition pipeline.</li>
+        <li>Developed data acquisition and automated control systems for the supersonic flow facility using LabVIEW, covering valve sequencing, safety interlocks, and real-time sensor monitoring; responsible for post-processing and statistical analysis of heterogeneous experimental datasets.</li>
+        <li>Designed a valve automation system for the supersonic flow simulator: selected components, developed control logic, defined safety interlocks, and produced complete technical documentation.</li>
+      </ul>
+      <div class="sub-label">Teaching</div>
+      <ul>
+        <li><strong>Fluid Mechanics Laboratory:</strong> Guided students through experimental setups, data acquisition, and quantitative analysis; evaluated lab reports.</li>
+        <li><strong>Thermodynamics:</strong> Assisted course instruction, held office hours, and supported grading for undergraduate sections.</li>
+        <li><strong>Heat Transfer Laboratory:</strong> Supervised experiments, reinforced theoretical concepts, and ensured safe equipment operation.</li>
+      </ul>
+    </div>
+
+    <div class="exp-entry">
+      <div class="two-col">
+        <span class="exp-title">Associate Engineer</span>
+        <span class="date">Apr 2024 &ndash; Aug 2024</span>
+      </div>
+      <div class="exp-org">Mahavir Shree International Pvt. Ltd., Kathmandu, Nepal</div>
+      <ul>
+        <li>Designed, relocated, and installed baggage handling and mechanical systems for the Domestic Terminal at Tribhuvan International Airport (TIA); coordinated vendors and site teams to minimize operational downtime.</li>
+        <li>Supervised scheduled maintenance of Rosenbauer Panther 6x6 fire vehicles at TIA, ensuring operational availability and full compliance with OEM procedures.</li>
+      </ul>
+    </div>
+
+    <div class="exp-entry">
+      <div class="two-col">
+        <span class="exp-title">Engineering Intern</span>
+        <span class="date">Jan 2023 &ndash; Apr 2023</span>
+      </div>
+      <div class="exp-org">Sipradi Trading Pvt. Ltd., Lalitpur, Nepal</div>
+      <ul>
+        <li>Supported service and maintenance of TATA vehicles; completed formal training on engine, transmission, and EV system architecture.</li>
+        <li>Assisted workflow organization in a high-volume service environment to improve turnaround times and documentation accuracy.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section>
+    <h2>Research</h2>
+    <div class="proj-entry">
+      <div class="proj-title">Thesis: Study of Coefficient of Drag in Particle-Laden Supersonic Flow</div>
+      <div class="tags">
+        <span class="tag">Schlieren Imaging</span>
+        <span class="tag">PIV / PTV</span>
+        <span class="tag">Supersonic Flow</span>
+        <span class="tag">LabVIEW</span>
+      </div>
+      <ul>
+        <li>Experimentally investigating drag coefficients of particles in supersonic flow using a custom-designed wind tunnel facility at the University of Toledo.</li>
+        <li>Flow visualization via Schlieren imaging; quantitative velocity field measurements via PIV and PTV.</li>
+        <li>Instrumentation: multi-sensor DAQ pipelines, optical alignment, pressure measurement, and real-time automated control via LabVIEW.</li>
+        <li>Statistical post-processing and analysis of multi-modal experimental datasets using Python.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Academic and Engineering Projects</h2>
+
+    <div class="proj-entry">
+      <div class="proj-title">Battery Thermal Management in Electric Vehicles (Comparative CFD)</div>
+      <div class="tags">
+        <span class="tag">Ansys Fluent</span><span class="tag">Python</span><span class="tag">EV Thermal</span>
+      </div>
+      <ul>
+        <li>Built CFD models in Ansys Fluent to compare active cooling strategies and coolant concentration effects on EV battery pack temperature uniformity; post-processed and analyzed multi-parameter simulation datasets using Python to quantify thermal performance trade-offs relevant to EV pack design.</li>
+      </ul>
+    </div>
+
+    <div class="proj-entry">
+      <div class="proj-title">Hydrogen Fuel Cell Powertrain (Retrofitting a Maruti 800)</div>
+      <div class="tags">
+        <span class="tag">Published</span><span class="tag">Fuel Cell</span><span class="tag">Powertrain Integration</span>
+      </div>
+      <ul>
+        <li>Specified and modeled integration of an H2 fuel cell powertrain into an ICE chassis; performed system-level modeling, packaging, and safety analysis. Results published in IOP Conference Series (2023).</li>
+      </ul>
+    </div>
+
+    <div class="proj-entry">
+      <div class="proj-title">Automatic Pipe Cleaning Crawler (Prototype)</div>
+      <div class="tags">
+        <span class="tag">SolidWorks</span><span class="tag">Prototype Fabrication</span><span class="tag">Mechanism Design</span>
+      </div>
+      <ul>
+        <li>Designed and fabricated a link-and-spring mechanism enabling adaptive radial contact for self-centering navigation within variable-diameter pipelines; handled the full design-to-build cycle including part selection and assembly.</li>
+      </ul>
+    </div>
+
+    <div class="proj-entry">
+      <div class="proj-title">Regenerative Braking System (Kinetic Energy Recovery)</div>
+      <div class="tags">
+        <span class="tag">Energy Recovery</span><span class="tag">Simulation</span><span class="tag">Drivetrain</span>
+      </div>
+      <ul>
+        <li>Analyzed and simulated a kinetic energy recovery system for automotive braking; evaluated energy recovery efficiency and drivetrain integration feasibility for a hybrid powertrain application.</li>
+      </ul>
+    </div>
+
+    <div class="proj-entry">
+      <div class="proj-title">CAD Design Portfolio (SolidWorks Assemblies)</div>
+      <div class="tags">
+        <span class="tag">SolidWorks</span><span class="tag">Assembly</span><span class="tag">3D Modeling</span>
+      </div>
+      <ul>
+        <li>Complete parametric assemblies: V6 Engine (full moving assembly), PTO Gear Box, F1 Race Car, F-16 Fighting Falcon. Each project includes part modeling, assembly constraints, rendered imagery, and motion animations.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <span class="sk-cat">Experimental</span>
+      <span class="sk-val">Schlieren imaging; PIV/PTV; supersonic wind tunnel design and operation; LabVIEW (DAQ and control systems); instrumentation and data acquisition; flow measurement; lab setup and validation</span>
+
+      <span class="sk-cat">Simulation</span>
+      <span class="sk-val">Ansys Fluent (CFD); Simulink; numerical methods</span>
+
+      <span class="sk-cat">CAD / Design</span>
+      <span class="sk-val">SolidWorks (3D modeling, assemblies, drawings, surface modeling); CSWA Certified; prototype fabrication; mechanical assembly</span>
+
+      <span class="sk-cat">Programming</span>
+      <span class="sk-val">Python (NumPy, Pandas, SciPy, Matplotlib); MATLAB; ML algorithms (supervised and unsupervised learning, regression, classification, clustering); Git/GitHub</span>
+    </div>
+  </section>
+
+  <!-- PUBLICATION -->
+  <section>
+    <h2>Publication</h2>
+    <p class="pub-entry">
+      Y. Shrestha, <strong>A. Subedi</strong>, M. Sapkota, P. Paudel, N. K. Yadav, and B. S. Thapa,
+      "Assessing the performance of a demonstrative hydrogen fuel cell power train in the chassis of an
+      internal combustion engine vehicle,"
+      <em>IOP Conference Series: Materials Science and Engineering</em>,
+      vol. 1279, no. 1, p. 012003, Mar. 2023.
+      <a href="https://doi.org/10.1088/1757-899X/1279/1/012003" target="_blank">DOI: 10.1088/1757-899X/1279/1/012003</a>
+    </p>
+  </section>
+
+  <!-- AWARDS -->
+  <section>
+    <h2>Awards &amp; Recognition</h2>
+    <div class="award-entry">
+      <div class="award-name">Outstanding Teaching Assistant Award</div>
+      <div class="award-meta">University of Toledo, Dept. of Mechanical, Industrial and Manufacturing Engineering &middot; Spring 2026</div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <h2>Training &amp; Certifications</h2>
+
+    <div class="cert-entry">
+      <div class="cert-name">SolidWorks Associate in Mechanical Design (CSWA)</div>
+      <div class="cert-meta">Dassault Syst&egrave;mes &middot; May 2023</div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-name">Capacity Development Program on EV Technology</div>
+      <div class="cert-meta">Kathmandu University &middot; May 2023 &middot; EV components, power electronics, charging systems, efficiency, design and simulation, grid integration</div>
+    </div>
+
+    <div class="cert-entry">
+      <div class="cert-name">Data Science with Python</div>
+      <div class="cert-meta">Broadway Infosys, Kathmandu &middot; Apr to Jul 2024 &middot; Supervised and unsupervised ML, regression, classification, clustering, data pipeline construction, visualization</div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section>
+    <h2>Leadership</h2>
+    <div class="lead-entry">
+      <div class="two-col">
+        <span class="exp-title">Team Leader, Shell Eco-Marathon (Team Junkiri)</span>
+        <span class="date">Aug 2021 &ndash; Oct 2022</span>
+      </div>
+      <div class="exp-org">Kathmandu University, Dhulikhel, Nepal</div>
+      <ul>
+        <li>Led full vehicle chassis and surface modeling in SolidWorks; managed fabrication workflow and coordinated international competition logistics in Indonesia.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="btn-row">
+    <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+  </div>
+
+</div>
+
+</body>
+</html>
