@@ -9,13 +9,16 @@ document.addEventListener('open3d', e => {
   if (initialized.has(card)) return;
   initialized.add(card);
 
-  new ModelViewer(card.querySelector('.viewer-canvas'), {
-    modelPath:    card.dataset.model,
-    loadingEl:    card.querySelector('.viewer-loading'),
-    guideEl:      card.querySelector('.export-guide'),
-    loadingPctEl: card.querySelector('.loading-pct'),
-    resetBtn:     card.querySelector('[data-action="reset"]'),
-    wireframeBtn: card.querySelector('[data-action="wireframe"]'),
+  // Wait one frame so the tab panel is painted and has real dimensions
+  requestAnimationFrame(() => {
+    new ModelViewer(card.querySelector('.viewer-canvas'), {
+      modelPath:    card.dataset.model,
+      loadingEl:    card.querySelector('.viewer-loading'),
+      guideEl:      card.querySelector('.export-guide'),
+      loadingPctEl: card.querySelector('.loading-pct'),
+      resetBtn:     card.querySelector('[data-action="reset"]'),
+      wireframeBtn: card.querySelector('[data-action="wireframe"]'),
+    });
   });
 });
 
@@ -82,7 +85,7 @@ class ModelViewer {
       this.modelPath,
       geo  => this.onLoad(geo),
       xhr  => this.onProgress(xhr),
-      ()   => this.onError(),
+      err  => this.onError(err),
     );
   }
 
@@ -133,7 +136,7 @@ class ModelViewer {
     this.renderer.render(this.scene, this.camera);
   }
 
-  resetCamera()    { this.controls.reset(); this.controls.autoRotate = true; }
+  resetCamera()     { this.controls.reset(); this.controls.autoRotate = true; }
   toggleWireframe() { if (this.material) { this.wireframe = !this.wireframe; this.material.wireframe = this.wireframe; } }
 
   bindResize() {
