@@ -281,7 +281,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 /* ─── RESEARCH ────────────────────────────────────────────────────────── */
 .research-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-.research-desc h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+.research-desc h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+.research-advisor { font-size: 0.85rem; color: var(--accent); margin-bottom: 14px !important; }
 .research-desc p { color: var(--text-2); margin-bottom: 14px; line-height: 1.8; }
 .method-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
 
