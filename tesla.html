@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Abhishek Subedi: MS Mechanical Engineering candidate (May 2027) specializing in thermal modeling, CFD simulation, EV battery thermal management, and experimental fluid mechanics.">
+  <title>Abhishek Subedi | Thermal Modeling Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./js/three/three.module.js",
+      "three/addons/": "./js/three/addons/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─────────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-brand" href="#hero">AS</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#cad">CAD</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#publications">Publications</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn btn-outline btn-sm" href="assets/biodata.html" target="_blank">Full Profile</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="assets/images/research/schlieren_3.png" alt="" aria-hidden="true" loading="eager">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-inner container">
+    <div class="hero-text">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Abhishek Subedi</h1>
+      <p class="hero-title">Thermal Modeling Engineer</p>
+      <p class="hero-sub" id="hero-tw-tesla"></p>
+      <div class="hero-ctas">
+        <a href="assets/biodata.html" class="btn btn-primary" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          View Full Profile
+        </a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="https://linkedin.com/in/abhishek-subedi-073a36193" class="btn btn-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+      <div class="hero-tags">
+        <span>Thermal Modeling · CFD</span>
+        <span>Battery Thermal Mgmt · EV</span>
+        <span>Ansys Fluent · MATLAB</span>
+        <span>SolidWorks · CSWA</span>
+        <span>PIV · Schlieren · LabVIEW</span>
+        <span>Python · Data Analysis</span>
+        <span>Numerical Methods · Heat Transfer</span>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <div class="photo-ring">
+        <img src="assets/images/headshot.jpg" alt="Abhishek Subedi">
+      </div>
+      <div class="photo-badge">
+        <span class="badge-dot"></span>
+        Open to Work · May 2027
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-hint" aria-label="Scroll to about">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+  </a>
+</section>
+
+<!-- ─── ABOUT ──────────────────────────────────────────────────────────── -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">About Me</h2>
+    <div class="about-grid reveal">
+      <div class="about-text">
+        <p>I'm a Mechanical Engineering graduate student at the University of Toledo (M.S., expected May 2027; GPA 4.0/4.0), specializing in <strong>thermal-fluid systems, CFD simulation, and experimental diagnostics</strong>. My work spans EV battery thermal management, high-speed experimental fluid mechanics, and mechanical design: backed by formal coursework in Computational Fluid Dynamics, Heat Transfer, and Numerical Methods.</p>
+
+        <p>My current MS research investigates drag coefficients of particles in particle-laden supersonic flow, using Schlieren imaging for shock visualization and PIV/PTV for quantitative velocity-field measurement. I develop custom Python and MATLAB pipelines to process multi-modal experimental datasets from acquisition through drag-coefficient extraction: the same data-driven workflow that directly applies to model calibration and thermal parameter extraction in battery abuse testing.</p>
+
+        <p>For my final-year bachelor's capstone at Kathmandu University, I built <strong>multi-physics CFD models in Ansys Fluent</strong> to evaluate active liquid cooling strategies for Li-ion battery packs. I parametrically varied coolant concentration, flow configuration, and channel geometry to quantify effects on temperature distribution, thermal gradients, and peak cell temperatures: findings directly relevant to thermal runaway risk assessment in next-generation EV battery architectures. I also designed the LabVIEW-based valve automation system for the supersonic flow facility at Toledo: covering component selection, control logic, safety interlocks, and complete technical documentation.</p>
+
+        <p>Earlier, I modeled a hydrogen fuel cell powertrain retrofit (Maruti 800) that led to a peer-reviewed publication in IOP Conference Series (2023), and fabricated a flywheel-based regenerative braking system from concept through working prototype. As Team Leader for Shell Eco-Marathon Asia 2022 (Team Junkiri), I led SolidWorks chassis modeling and managed international competition logistics in Indonesia.</p>
+
+        <p>I'm based in Toledo, OH, graduating May 2027, and open to relocation: particularly for opportunities in battery thermal management, EV systems, and thermal/fluid engineering R&amp;D.</p>
+      </div>
+      <div class="about-sidebar">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span class="stat-num">4.0</span>
+            <span class="stat-label">MS GPA</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">1</span>
+            <span class="stat-label">Publication</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">8+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num">★</span>
+            <span class="stat-label">Outstanding TA</span>
+          </div>
+        </div>
+        <div class="about-info">
+          <div class="info-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Toledo, OH · Open to Relocation
+          </div>
+          <div class="info-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            University of Toledo
+          </div>
+          <div class="info-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Graduating May 2027
+          </div>
+          <div class="info-row">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+            CFD · Heat Transfer · Num. Methods
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ────────────────────────────────────────────────────── -->
+<section id="experience" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title reveal">Experience</h2>
+    <div class="timeline reveal">
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="exp-header">
+            <div>
+              <h3>Graduate Research &amp; Teaching Assistant</h3>
+              <p class="exp-org">University of Toledo · Toledo, OH</p>
+            </div>
+            <span class="exp-date">Jan 2025 to Present</span>
+          </div>
+          <p class="exp-type">Research</p>
+          <ul class="exp-list">
+            <li>Designed and commissioned a LabVIEW-based valve automation and data acquisition system for a supersonic flow facility: specified components, developed control logic with safety interlocks, and produced complete technical documentation; system enables repeatable experimental campaigns.</li>
+            <li>Experimentally characterizing drag coefficients of particles in particle-laden supersonic flow using Schlieren imaging and PIV/PTV; processing multi-modal optical datasets through custom <strong>Python and MATLAB pipelines</strong> from raw acquisition through drag-coefficient extraction.</li>
+          </ul>
+          <p class="exp-type" style="margin-top:12px">Teaching: <em>Outstanding TA Award, College of Engineering, Spring 2026</em></p>
+          <ul class="exp-list">
+            <li><strong>Heat Transfer Laboratory:</strong> supervised convection, conduction, and radiation experiments; reinforced theoretical heat transfer principles and ensured safe equipment operation.</li>
+            <li><strong>Fluid Mechanics Laboratory:</strong> guided experimental setups, data acquisition, and analysis; evaluated lab reports.</li>
+            <li><strong>Thermodynamics:</strong> assisted course instruction, held office hours, and supported grading for undergraduate sections.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag tag-blue">Ansys Fluent</span>
+            <span class="tag tag-blue">MATLAB</span>
+            <span class="tag tag-blue">Python</span>
+            <span class="tag tag-blue">LabVIEW</span>
+            <span class="tag tag-blue">PIV</span>
+            <span class="tag tag-blue">Schlieren Imaging</span>
+            <span class="tag tag-blue">Heat Transfer</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="exp-header">
+            <div>
+              <h3>Associate Engineer</h3>
+              <p class="exp-org">Mahavir Shree International Pvt. Ltd. · Kathmandu, Nepal</p>
+            </div>
+            <span class="exp-date">Apr 2024 to Aug 2024</span>
+          </div>
+          <ul class="exp-list">
+            <li>Led end-to-end redesign, relocation, and installation of baggage handling and mechanical systems for the Domestic Terminal at Tribhuvan International Airport; coordinated vendors and site teams across concurrent workstreams, delivering the project without operational shutdowns.</li>
+            <li>Managed preventive and corrective maintenance program for Rosenbauer Panther 6×6 ARFF fire vehicles, maintaining full fleet availability and OEM compliance across all service intervals.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag tag-gray">Mechanical Systems</span>
+            <span class="tag tag-gray">Vendor Coordination</span>
+            <span class="tag tag-gray">Technical Documentation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-card">
+          <div class="exp-header">
+            <div>
+              <h3>Engineering Intern</h3>
+              <p class="exp-org">Sipradi Trading Pvt. Ltd. · Lalitpur, Nepal</p>
+            </div>
+            <span class="exp-date">Jan 2023 to Apr 2023</span>
+          </div>
+          <ul class="exp-list">
+            <li>Completed formal OEM training on TATA vehicle engine, transmission, and EV powertrain architecture; applied knowledge to vehicle diagnostics and service documentation.</li>
+            <li>Assisted workflow organization in a high-volume service environment to improve turnaround times and documentation accuracy.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag tag-gray">EV Architecture</span>
+            <span class="tag tag-gray">Vehicle Service</span>
+            <span class="tag tag-gray">Documentation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESEARCH ──────────────────────────────────────────────────────── -->
+<section id="research" class="section section-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Research</h2>
+      <p class="section-sub">MS Thesis · Fluids and Imaging Innovation Lab · University of Toledo · 2025–2027</p>
+    </div>
+    <div class="research-layout reveal">
+      <div class="research-desc">
+        <h3>Study of Coefficient of Drag in Particle-Laden Supersonic Flow</h3>
+        <p class="research-advisor">Advisor: <strong>Dr. Omid Amili</strong> · Fluids and Imaging Innovation Lab, University of Toledo</p>
+        <p>My thesis investigates how particles behave aerodynamically in supersonic gas flows: a problem with direct relevance to solid rocket propulsion, powder deposition, and high-speed particulate transport. I design and execute experiments using Schlieren imaging to visualize shock structures and PIV to map velocity fields around particles in the supersonic stream. The resulting multi-modal datasets are processed through custom <strong>MATLAB and Python pipelines</strong> from acquisition through drag-coefficient extraction.</p>
+        <p>I also designed the LabVIEW-based valve automation and DAQ system for the supersonic facility: component selection, control logic, safety interlocks, and complete technical documentation: giving me direct experience with the full design-to-hardware cycle in a research environment. This kind of instrumentation and control work is closely analogous to the data acquisition and model validation workflows in battery abuse testing.</p>
+        <p>All schlieren images shown are from the preliminary characterization phase; fine-tuning of the imaging system is ongoing.</p>
+        <div class="method-tags">
+          <span class="tag tag-blue">Schlieren Imaging</span>
+          <span class="tag tag-blue">PIV / PTV</span>
+          <span class="tag tag-blue">Supersonic Flow</span>
+          <span class="tag tag-blue">MATLAB</span>
+          <span class="tag tag-blue">Python</span>
+          <span class="tag tag-blue">LabVIEW</span>
+          <span class="tag tag-blue">DAQ &amp; Control Systems</span>
+        </div>
+      </div>
+      <div class="research-visuals">
+        <div class="schlieren-grid">
+          <figure class="schlieren-fig">
+            <img src="assets/images/research/schlieren_1.png" alt="Schlieren image showing shock structure in particle-laden supersonic jet" loading="lazy">
+            <figcaption>Particle-laden supersonic jet and shock interaction</figcaption>
+          </figure>
+          <figure class="schlieren-fig">
+            <img src="assets/images/research/schlieren_2.png" alt="Shock diamonds in supersonic flow" loading="lazy">
+            <figcaption>Shock diamonds in free supersonic jet</figcaption>
+          </figure>
+          <figure class="schlieren-fig schlieren-fig--wide">
+            <img src="assets/images/research/schlieren_3.png" alt="Near-field shock structure at nozzle exit" loading="lazy">
+            <figcaption>Near-field shock structure · nozzle exit</figcaption>
+          </figure>
+        </div>
+        <figure class="rig-fig">
+          <img src="assets/images/research/rig.jpg" alt="Supersonic flow experimental rig at University of Toledo" loading="lazy">
+          <figcaption>Supersonic flow experimental facility · University of Toledo</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CAD PORTFOLIO ─────────────────────────────────────────────────── -->
+<section id="cad" class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">CAD Portfolio</h2>
+      <p class="section-sub">SolidWorks · CSWA Certified · All models built from scratch</p>
+    </div>
+    <div class="cad-grid reveal">
+
+      <!-- V6 Engine -->
+      <div class="cad-card" data-model="assets/models/v6_engine.STL" data-model-name="V6 Engine Assembly.SLDASM">
+        <div class="cad-card-header">
+          <div>
+            <h3>V6 Engine Assembly</h3>
+            <p>31 parts · Full engine from air intake to exhaust</p>
+          </div>
+          <span class="part-count">31 parts</span>
+        </div>
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="gallery">Gallery</button>
+          <button class="tab-btn" data-tab="video">Animation</button>
+          <button class="tab-btn" data-tab="3d">3D View</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-panel active" data-panel="gallery">
+            <div class="img-slider">
+              <div class="slides-wrap">
+                <img class="slide active" src="assets/images/cad/v6_1.png" alt="V6 Engine Assembly full view" loading="lazy">
+                <img class="slide" src="assets/images/cad/v6_2.png" alt="V6 Engine Assembly detail" loading="lazy">
+                <img class="slide" src="assets/images/cad/v6_3.png" alt="V6 Engine Assembly cross section" loading="lazy">
+                <img class="slide" src="assets/images/cad/v6_4.png" alt="V6 Piston Assembly" loading="lazy">
+                <img class="slide" src="assets/images/cad/v6_5.png" alt="V6 Turbo Housing" loading="lazy">
+              </div>
+              <button class="slide-prev" aria-label="Previous">&#8249;</button>
+              <button class="slide-next" aria-label="Next">&#8250;</button>
+              <div class="slide-dots">
+                <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="video">
+            <div class="video-wrap">
+              <video src="assets/videos/v6_engine.mp4" controls loop muted playsinline></video>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="3d">
+            <div class="viewer-wrap">
+              <div class="viewer-canvas"></div>
+              <div class="viewer-loading">
+                <div class="spinner"></div>
+                <span class="loading-pct">Loading…</span>
+              </div>
+              <div class="export-guide">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                <p>To enable the 3D viewer, export from SolidWorks:</p>
+                <code>File → Save As → STL → Binary</code>
+                <p>Save as <code>assets/models/v6_engine.STL</code></p>
+              </div>
+              <div class="viewer-controls">
+                <button class="ctrl-btn" data-action="reset" title="Reset view">↺</button>
+                <button class="ctrl-btn" data-action="wireframe" title="Toggle wireframe">⊞</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PTO Gear Box -->
+      <div class="cad-card" data-model="assets/models/pto_gearbox.STL" data-model-name="PTO Gear Box Assembly.SLDASM">
+        <div class="cad-card-header">
+          <div>
+            <h3>PTO Gear Box</h3>
+            <p>8 parts · 20T/40T gear pair · SKF 6214-2 bearings</p>
+          </div>
+          <span class="part-count">8 parts</span>
+        </div>
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="gallery">Gallery</button>
+          <button class="tab-btn" data-tab="video">Animation</button>
+          <button class="tab-btn" data-tab="3d">3D View</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-panel active" data-panel="gallery">
+            <div class="img-slider">
+              <div class="slides-wrap">
+                <img class="slide active" src="assets/images/cad/pto_1.png" alt="PTO Gear Box Assembly" loading="lazy">
+                <img class="slide" src="assets/images/cad/pto_2.png" alt="PTO Gear Box exploded" loading="lazy">
+                <img class="slide" src="assets/images/cad/pto_3.png" alt="PTO Gear Box cross section" loading="lazy">
+              </div>
+              <button class="slide-prev" aria-label="Previous">&#8249;</button>
+              <button class="slide-next" aria-label="Next">&#8250;</button>
+              <div class="slide-dots">
+                <span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="video">
+            <div class="video-wrap">
+              <video src="assets/videos/pto_gearbox.mp4" controls loop muted playsinline></video>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="3d">
+            <div class="viewer-wrap">
+              <div class="viewer-canvas"></div>
+              <div class="viewer-loading">
+                <div class="spinner"></div>
+                <span class="loading-pct">Loading…</span>
+              </div>
+              <div class="export-guide">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                <p>To enable the 3D viewer, export from SolidWorks:</p>
+                <code>File → Save As → STL → Binary</code>
+                <p>Save as <code>assets/models/pto_gearbox.STL</code></p>
+              </div>
+              <div class="viewer-controls">
+                <button class="ctrl-btn" data-action="reset" title="Reset view">↺</button>
+                <button class="ctrl-btn" data-action="wireframe" title="Toggle wireframe">⊞</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- F1 Car -->
+      <div class="cad-card" data-model="assets/models/f1_car.STL" data-model-name="F1 Assembly.SLDASM">
+        <div class="cad-card-header">
+          <div>
+            <h3>F1 Car</h3>
+            <p>Full body + wheels · Color rendered</p>
+          </div>
+          <span class="part-count">2 parts</span>
+        </div>
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="gallery">Gallery</button>
+          <button class="tab-btn" data-tab="3d">3D View</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-panel active" data-panel="gallery">
+            <div class="img-slider">
+              <div class="slides-wrap">
+                <img class="slide active" src="assets/images/cad/f1_1.png" alt="F1 Car ISO view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f1_2.png" alt="F1 Car opposite ISO" loading="lazy">
+                <img class="slide" src="assets/images/cad/f1_3.png" alt="F1 Car side view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f1_4.png" alt="F1 Car front view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f1_5.png" alt="F1 Car top view" loading="lazy">
+              </div>
+              <button class="slide-prev" aria-label="Previous">&#8249;</button>
+              <button class="slide-next" aria-label="Next">&#8250;</button>
+              <div class="slide-dots">
+                <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="3d">
+            <div class="viewer-wrap">
+              <div class="viewer-canvas"></div>
+              <div class="viewer-loading">
+                <div class="spinner"></div>
+                <span class="loading-pct">Loading…</span>
+              </div>
+              <div class="export-guide">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                <p>To enable the 3D viewer, export from SolidWorks:</p>
+                <code>File → Save As → STL → Binary</code>
+                <p>Save as <code>assets/models/f1_car.STL</code></p>
+              </div>
+              <div class="viewer-controls">
+                <button class="ctrl-btn" data-action="reset" title="Reset view">↺</button>
+                <button class="ctrl-btn" data-action="wireframe" title="Toggle wireframe">⊞</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- F-16 Fighting Falcon -->
+      <div class="cad-card" data-model="assets/models/f16_falcon.STL" data-model-name="F-16 Fighting Falcon.SLDASM">
+        <div class="cad-card-header">
+          <div>
+            <h3>F-16 Fighting Falcon</h3>
+            <p>~40 parts · Full aircraft with armaments &amp; landing gear</p>
+          </div>
+          <span class="part-count">~40 parts</span>
+        </div>
+        <div class="tab-nav">
+          <button class="tab-btn active" data-tab="gallery">Gallery</button>
+          <button class="tab-btn" data-tab="3d">3D View</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-panel active" data-panel="gallery">
+            <div class="img-slider">
+              <div class="slides-wrap">
+                <img class="slide active" src="assets/images/cad/f16_1.png" alt="F-16 Trimetric view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f16_2.png" alt="F-16 Side view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f16_3.png" alt="F-16 Front view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f16_4.png" alt="F-16 Top view" loading="lazy">
+                <img class="slide" src="assets/images/cad/f16_5.png" alt="F-16 Rear trimetric" loading="lazy">
+              </div>
+              <button class="slide-prev" aria-label="Previous">&#8249;</button>
+              <button class="slide-next" aria-label="Next">&#8250;</button>
+              <div class="slide-dots">
+                <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-panel="3d">
+            <div class="viewer-wrap">
+              <div class="viewer-canvas"></div>
+              <div class="viewer-loading">
+                <div class="spinner"></div>
+                <span class="loading-pct">Loading…</span>
+              </div>
+              <div class="export-guide">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+                <p>To enable the 3D viewer, export from SolidWorks:</p>
+                <code>File → Save As → STL → Binary</code>
+                <p>Save as <code>assets/models/f16_falcon.STL</code></p>
+              </div>
+              <div class="viewer-controls">
+                <button class="ctrl-btn" data-action="reset" title="Reset view">↺</button>
+                <button class="ctrl-btn" data-action="wireframe" title="Toggle wireframe">⊞</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cad-grid -->
+  </div>
+</section>
+
+<!-- ─── UNDERGRAD PROJECTS ────────────────────────────────────────────── -->
+<section id="projects" class="section section-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Undergraduate Projects</h2>
+      <p class="section-sub">Kathmandu University · Department of Mechanical Engineering</p>
+    </div>
+    <div class="project-grid reveal">
+
+      <!-- BTMS: MOST RELEVANT (first) -->
+      <div class="project-card">
+        <div class="project-icon">🔋</div>
+        <div class="project-meta">
+          <span class="project-date">May 2023</span>
+          <span class="tag tag-blue" style="font-size:0.72rem">Capstone · CFD</span>
+        </div>
+        <h3>Battery Thermal Management (CFD)</h3>
+        <p>Built multi-physics CFD models in <strong>Ansys Fluent</strong> to compare active liquid cooling strategies for Li-ion battery packs. Parametrically varied coolant concentration, flow configuration, and channel geometry to quantify effects on temperature distribution, thermal gradients, and peak cell temperatures: providing design guidance relevant to thermal runaway risk reduction in EV battery architectures.</p>
+        <div class="project-tags">
+          <span class="tag tag-blue">Ansys Fluent</span>
+          <span class="tag tag-blue">CFD</span>
+          <span class="tag tag-blue">Thermal Modeling</span>
+          <span class="tag tag-gray">EV Battery</span>
+          <span class="tag tag-gray">Heat Transfer</span>
+        </div>
+      </div>
+
+      <!-- H2 Fuel Cell -->
+      <div class="project-card">
+        <div class="project-icon">🚗</div>
+        <div class="project-meta">
+          <span class="project-date">May 2022</span>
+          <a href="https://doi.org/10.1088/1757-899X/1279/1/012003" class="project-doi" target="_blank" rel="noopener">Published ↗</a>
+        </div>
+        <h3>Hydrogen Fuel Cell Powertrain</h3>
+        <p>Specified and modeled a hydrogen fuel cell powertrain integration for a Maruti 800 chassis: fuel cell stack, balance-of-plant, power electronics, and drivetrain packaging. Performed system-level thermal and safety analysis. Results published as a peer-reviewed paper in IOP Conference Series (2023).</p>
+        <div class="project-tags">
+          <span class="tag tag-amber">Published</span>
+          <span class="tag tag-gray">Fuel Cell</span>
+          <span class="tag tag-gray">Powertrain</span>
+          <span class="tag tag-gray">Safety Analysis</span>
+        </div>
+      </div>
+
+      <!-- Regen Braking -->
+      <div class="project-card">
+        <div class="project-icon">⚙️</div>
+        <div class="project-meta">
+          <span class="project-date">Dec 2020</span>
+        </div>
+        <h3>Regenerative Braking System</h3>
+        <p>Designed and physically fabricated a flywheel-based regenerative braking system at the KU Technical Training Centre. Project covered energy storage analysis, mechanical design, and full fabrication from concept through working prototype: directly relevant to EV energy recovery systems.</p>
+        <div class="project-tags">
+          <span class="tag tag-gray">Fabrication</span>
+          <span class="tag tag-gray">Energy Systems</span>
+          <span class="tag tag-gray">EV / Hybrid</span>
+        </div>
+      </div>
+
+      <!-- Pipe Crawler -->
+      <div class="project-card">
+        <div class="project-icon">🔧</div>
+        <div class="project-meta">
+          <span class="project-date">Jul 2019</span>
+        </div>
+        <h3>Automatic Pipe Cleaning Crawler</h3>
+        <p>Designed and fabricated a link-and-spring mechanism enabling adaptive radial contact for navigation within variable-diameter pipelines. Covered mechanism design, materials selection, dimensional calculations, and prototype assembly.</p>
+        <div class="project-tags">
+          <span class="tag tag-gray">Fabrication</span>
+          <span class="tag tag-gray">Mechanism Design</span>
+          <span class="tag tag-gray">SolidWorks</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ────────────────────────────────────────────────────────── -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Skills</h2>
+    <div class="skills-grid reveal">
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
+          Thermal &amp; CFD
+        </h3>
+        <div class="skill-tags">
+          <span>Ansys Fluent (CFD · Thermal)</span>
+          <span>Conjugate Heat Transfer</span>
+          <span>Multi-physics Simulation</span>
+          <span>Numerical Methods</span>
+          <span>Battery Thermal Modeling</span>
+          <span>Heat Transfer Analysis</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          Programming &amp; Data
+        </h3>
+        <div class="skill-tags">
+          <span>MATLAB</span>
+          <span>Python</span>
+          <span>NumPy · Pandas · SciPy</span>
+          <span>Matplotlib</span>
+          <span>Git / GitHub</span>
+          <span>ML (basics)</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          CAD &amp; Design
+        </h3>
+        <div class="skill-tags">
+          <span>SolidWorks ★ CSWA</span>
+          <span>Assembly Modeling</span>
+          <span>Mechanical Design</span>
+          <span>Drawing Packages</span>
+          <span>Valve System Design</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3 class="skill-group-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          Experimental
+        </h3>
+        <div class="skill-tags">
+          <span>Schlieren Imaging</span>
+          <span>Particle Image Velocimetry (PIV)</span>
+          <span>LabVIEW (DAQ &amp; Control)</span>
+          <span>Supersonic Wind Tunnel</span>
+          <span>Instrumentation &amp; DAQ</span>
+          <span>Lab Setup &amp; Validation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── PUBLICATION ───────────────────────────────────────────────────── -->
+<section id="publications" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title reveal">Publication</h2>
+    <div class="pub-card reveal">
+      <div class="pub-badge">Conference Paper</div>
+      <p class="pub-citation">
+        Y. Shrestha, <strong>A. Subedi</strong>, M. Sapkota, P. Paudel, N. K. Yadav, and B. S. Thapa,
+        "Assessing the performance of a demonstrative hydrogen fuel cell power train in the chassis of an internal combustion engine vehicle,"
+        <em>IOP Conference Series: Materials Science and Engineering</em>, vol. 1279, no. 1, p. 012003, Mar. 2023.
+      </p>
+      <a href="https://doi.org/10.1088/1757-899X/1279/1/012003" class="btn btn-outline btn-sm" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        DOI: 10.1088/1757-899X/1279/1/012003
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AWARDS & CERTIFICATIONS ──────────────────────────────────────── -->
+<section id="awards" class="section">
+  <div class="container">
+    <h2 class="section-title reveal">Awards &amp; Certifications</h2>
+    <div class="awards-grid reveal">
+
+      <div class="award-card award-card--featured">
+        <img src="assets/images/awards/Outstanding_TA.jpg" alt="Outstanding TA Award certificate" class="award-img" loading="lazy">
+        <div class="award-body">
+          <div class="award-icon">🏆</div>
+          <h3>Outstanding TA Award</h3>
+          <p>University of Toledo, College of Engineering</p>
+          <span class="award-date">Spring 2026</span>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon">🎓</div>
+        <h3>SolidWorks Associate</h3>
+        <p>Certified SolidWorks Associate in Mechanical Design (CSWA)</p>
+        <span class="award-date">May 2023 · Dassault Systèmes</span>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon">⚡</div>
+        <h3>EV Technology Program</h3>
+        <p>Capacity Development Program on EV Technology: power electronics, charging systems, efficiency, and grid integration</p>
+        <span class="award-date">May 2023 · Kathmandu University</span>
+      </div>
+
+      <div class="award-card">
+        <div class="award-icon">🐍</div>
+        <h3>Data Science with Python</h3>
+        <p>Supervised &amp; unsupervised ML, regression, classification, clustering, pipeline construction</p>
+        <span class="award-date">Apr–Jul 2024 · Broadway Infosys</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── LEADERSHIP ────────────────────────────────────────────────────── -->
+<section id="leadership" class="section section-dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Leadership</h2>
+      <p class="section-sub">Student leadership and community engagement at Kathmandu University</p>
+    </div>
+
+    <div class="leadership-grid reveal">
+
+      <!-- Shell Eco-Marathon -->
+      <div class="lead-card lead-card--featured">
+        <div class="lead-media">
+          <div class="img-slider">
+            <div class="slides-wrap">
+              <div class="slide active"><img src="assets/images/leadership/shell_1.jpg" alt="Shell Eco-Marathon 2022" loading="lazy"></div>
+              <div class="slide"><img src="assets/images/leadership/shell_2.jpg" alt="Shell Eco-Marathon 2022" loading="lazy"></div>
+              <div class="slide"><img src="assets/images/leadership/shell_3.jpg" alt="Shell Eco-Marathon 2022" loading="lazy"></div>
+              <div class="slide"><img src="assets/images/leadership/shell_4.jpg" alt="Shell Eco-Marathon 2022" loading="lazy"></div>
+              <div class="slide"><img src="assets/images/leadership/shell_5.jpg" alt="Shell Eco-Marathon 2022" loading="lazy"></div>
+            </div>
+            <button class="slide-prev" aria-label="Previous">&#8249;</button>
+            <button class="slide-next" aria-label="Next">&#8250;</button>
+            <div class="slide-dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </div>
+        </div>
+        <div class="lead-body">
+          <span class="lead-role">Team Leader</span>
+          <h3>Shell Eco-Marathon Asia 2022</h3>
+          <p class="lead-org">Team Junkiri &middot; Kathmandu University, Nepal</p>
+          <p class="lead-date">Aug 2021 &ndash; Oct 2022</p>
+          <p>Led a student team in designing and building an ultra-efficient vehicle for the Shell Eco-Marathon Asia competition held in Indonesia. Responsible for full vehicle chassis and surface modeling in SolidWorks, coordinating fabrication across the team, and managing all international competition logistics.</p>
+          <div class="lead-tags">
+            <span class="tag tag-blue">SolidWorks</span>
+            <span class="tag tag-blue">Vehicle Design</span>
+            <span class="tag tag-blue">Team Management</span>
+            <span class="tag tag-blue">International Competition</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- AMES VP -->
+      <div class="lead-card">
+        <div class="lead-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <span class="lead-role">Vice President</span>
+        <h3>Association of Mechanical Engineering Students (AMES)</h3>
+        <p class="lead-org">Kathmandu University, Dhulikhel, Nepal</p>
+        <p class="lead-date">May 2020 &ndash; Aug 2021</p>
+        <p>Served as Vice President of the departmental student association, supporting organizational activities, coordinating department events, and representing student interests within the Mechanical Engineering program.</p>
+      </div>
+
+      <!-- University Scholar Conference -->
+      <div class="lead-card">
+        <div class="lead-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h10M7 11h6"/></svg>
+        </div>
+        <span class="lead-role">Organizing Member</span>
+        <h3>University Scholar Conference &mdash; 1st Edition</h3>
+        <p class="lead-org">Kathmandu University, Dhulikhel, Nepal</p>
+        <p class="lead-date">2021</p>
+        <p>Contributed to organizing the inaugural University Scholar Conference at Kathmandu University, coordinating logistics and supporting the execution of the institution's first formal academic conference.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ───────────────────────────────────────────────────────── -->
+<section id="contact" class="section section-dark">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <div class="contact-text">
+        <h2 class="section-title">Get in Touch</h2>
+        <p>I'm graduating in May 2027 and open to opportunities in <strong>battery thermal management, EV systems, thermal/fluid engineering R&amp;D</strong>, and mechanical design. I'm based in Toledo, OH and open to relocation: including Palo Alto, CA.</p>
+        <p>Whether you have a role in mind, want to discuss research, or just want to connect, I would love to hear from you.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:subediavishek@gmail.com" class="contact-item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <span>subediavishek@gmail.com</span>
+        </a>
+        <a href="https://linkedin.com/in/abhishek-subedi-073a36193" class="contact-item" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <span>linkedin.com/in/abhishek-subedi-073a36193</span>
+        </a>
+        <a href="assets/biodata.html" class="contact-item" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <span>View Full Profile</span>
+        </a>
+        <div class="contact-item contact-location">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Toledo, OH · Open to Relocation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <p>© 2026 Abhishek Subedi</p>
+  </div>
+</footer>
+
+<script defer src="js/app.js"></script>
+<script type="module" src="js/viewer.js"></script>
+
+<!-- Tesla-targeted typewriter (runs on #hero-tw-tesla; app.js targets #hero-typewriter which is absent here) -->
+<script>
+(function () {
+  var tw = document.getElementById('hero-tw-tesla');
+  if (!tw) return;
+  var phrases = [
+    'MS Candidate · University of Toledo · May 2027',
+    'Thermal Modeling & CFD',
+    'Battery Thermal Management · EV',
+    'Ansys Fluent · MATLAB · Python',
+    'Open to Work · Palo Alto, CA',
+  ];
+  var pi = 0, ci = 0, del = false;
+  function tick() {
+    var ph = phrases[pi];
+    if (!del) {
+      tw.textContent = ph.slice(0, ++ci);
+      if (ci === ph.length) { del = true; setTimeout(tick, 2200); return; }
+    } else {
+      tw.textContent = ph.slice(0, --ci);
+      if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; }
+    }
+    setTimeout(tick, del ? 38 : 72);
+  }
+  tick();
+}());
+</script>
+
+</body>
+</html>
