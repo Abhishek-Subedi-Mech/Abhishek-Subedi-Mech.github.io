@@ -69,9 +69,10 @@
         <span>Thermal Systems</span>
         <span>Mechanical Design · CAD</span>
         <span>SolidWorks · CSWA</span>
-        <span>Ansys  · Fluent </span>
-        <span>PIV · Schlieren</span>
-        <span>Python · Data Analysis</span>
+        <span>Ansys Fluent · CFD</span>
+        <span>Schlieren · PIV/PTV</span>
+        <span>LabVIEW · DAQ</span>
+        <span>Python · MATLAB</span>
       </div>
     </div>
     <div class="hero-photo">
@@ -96,7 +97,7 @@
     <div class="about-grid reveal">
       <div class="about-text">
         <p>I'm a Mechanical Engineering graduate student at the University of Toledo (M.S., expected December 2026), with a background that spans experimental fluid mechanics, thermal systems, CAD, and hands-on fabrication.</p>
-        <p>My current research investigates the aerodynamic drag of particles in supersonic flow, a problem that sits at the intersection of high-speed gas dynamics and multiphase flow. Day to day, that means designing and running experiments on a supersonic flow facility, operating Schlieren imaging and Particle Image Velocimetry (PIV) systems, and processing the resulting data through Python-based analysis pipelines. I also designed the valve automation system for the facility: component selection, control logic, safety interlocks, and the full documentation package.</p>
+        <p>My current research investigates the aerodynamic drag of particles in supersonic flow, a problem that sits at the intersection of high-speed gas dynamics and multiphase flow. I designed and built the supersonic wind tunnel facility this work runs on, and developed its experimental techniques — Schlieren imaging for flow visualization and PIV/PTV for velocity field measurement — from optical layout through calibration and validation. I also developed the facility's LabVIEW data acquisition and control system, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring, and I process the resulting datasets through Python and MATLAB analysis pipelines.</p>
         <p>Before Toledo, I earned my B.E. in Mechanical Engineering from Kathmandu University (GPA 3.5/4.0), where I worked across a range of hands-on projects, from fabricating a pipe-cleaning crawler robot and a flywheel-based regenerative braking system, to modeling a hydrogen fuel cell powertrain retrofit that led to a peer-reviewed publication in IOP Conference Series (2023).</p>
         <p>One of the formative experiences of my undergraduate years was leading <strong>Team Junkiri</strong> in the Shell Eco-Marathon Asia, an international competition where student teams design and build ultra-efficient vehicles. I led the SolidWorks chassis and surface modeling, coordinated fabrication across a multi-person team, and managed the logistics of competing in Indonesia. More than the result, it was an education in what it takes to take a design from a screen to a physical object under real constraints.</p>
         <p>I'm based in Toledo, OH and graduating in December 2026, open to relocation for the right opportunity in mechanical design, thermal and fluid systems, R&D, or EV/clean energy engineering.</p>
@@ -157,20 +158,22 @@
           </div>
           <p class="exp-type">Research</p>
           <ul class="exp-list">
-            <li>Experimentally investigating drag coefficients of particles in supersonic flow using Schlieren imaging and PIV for flow visualization and velocity field characterization; managing test setup, flow conditioning, and data acquisition.</li>
-            <li>Designing a valve automation system for a supersonic flow simulator: component selection, control logic, safety interlocks, and technical documentation.</li>
+            <li>Designed, built, and operate a supersonic wind tunnel facility for experimental study of drag in particle-laden flow; developed the experimental techniques on the facility, including Schlieren imaging for flow visualization and PIV/PTV for quantitative velocity field measurement, from optical layout through calibration and validation of results.</li>
+            <li>Developed the facility's data acquisition and control system in LabVIEW, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring; documented the full system in specifications and test reports.</li>
+            <li>Iterate hardware designs through prototype, test, and redesign cycles; correlate experimental measurements against analytical and simulation predictions.</li>
           </ul>
           <p class="exp-type" style="margin-top:12px">Teaching</p>
           <ul class="exp-list">
-            <li><strong>Fluid Mechanics Laboratory:</strong> guided students through experimental setups, data acquisition, and analysis; evaluated lab reports.</li>
-            <li><strong>Thermodynamics:</strong> assisted course instruction, held office hours, and supported grading for undergraduate sections.</li>
-            <li><strong>Heat Transfer Laboratory:</strong> supervised experiments, reinforced theoretical concepts, and ensured safe equipment operation.</li>
+            <li><strong>Heat Transfer Laboratory:</strong> supervised conduction, convection, and heat exchanger experiments; reinforced theory and ensured safe equipment operation.</li>
+            <li><strong>Fluid Mechanics Laboratory:</strong> guided students through experimental setups, data acquisition, and analysis.</li>
+            <li><strong>Thermodynamics:</strong> assisted course instruction, held office hours, and supported grading.</li>
           </ul>
           <div class="exp-tags">
-            <span class="tag tag-blue">PIV</span>
             <span class="tag tag-blue">Schlieren Imaging</span>
-            <span class="tag tag-blue">Python</span>
+            <span class="tag tag-blue">PIV / PTV</span>
+            <span class="tag tag-blue">LabVIEW</span>
             <span class="tag tag-blue">Supersonic Flow</span>
+            <span class="tag tag-blue">Python</span>
             <span class="tag tag-blue">Teaching</span>
           </div>
         </div>
@@ -187,8 +190,8 @@
             <span class="exp-date">Apr 2024 to Aug 2024</span>
           </div>
           <ul class="exp-list">
-            <li>Designed, relocated, and installed baggage handling and mechanical systems for the Domestic Terminal at Tribhuvan International Airport (TIA); coordinated vendors and site teams to minimize operational downtime.</li>
-            <li>Supervised scheduled maintenance of Rosenbauer Panther 6×6 fire vehicles at TIA, ensuring operational availability and full compliance with OEM procedures.</li>
+            <li>Designed, relocated, and installed baggage handling and mechanical systems for the Domestic Terminal at Tribhuvan International Airport (TIA); coordinated vendors on component selection, cost, and lead times; prepared technical specifications and managed site execution.</li>
+            <li>Supervised scheduled maintenance of Rosenbauer Panther 6×6 fire vehicles at TIA, tracking non-conformances and ensuring OEM compliance.</li>
           </ul>
           <div class="exp-tags">
             <span class="tag tag-gray">Mechanical Systems</span>
@@ -210,7 +213,6 @@
           </div>
           <ul class="exp-list">
             <li>Supported service and maintenance of TATA vehicles; completed formal training on engine, transmission, and EV architecture.</li>
-            <li>Assisted workflow organization in a high-volume service environment to improve turnaround times and documentation accuracy.</li>
           </ul>
           <div class="exp-tags">
             <span class="tag tag-gray">Vehicle Service</span>
@@ -235,16 +237,16 @@
       <div class="research-desc">
         <h3>Study of Coefficient of Drag in Particle-Laden Supersonic Flow</h3>
         <p class="research-advisor">Advisor: <strong>Dr. Omid Amili</strong> · Fluids and Imaging Innovation Lab, University of Toledo</p>
-        <p>My thesis investigates how particles behave aerodynamically in supersonic gas flows, a problem with direct relevance to solid rocket propulsion, powder deposition systems, and high-speed particulate transport. Working in the Fluids and Imaging Innovation Lab under Dr. Omid Amili, I design and execute experiments using Schlieren imaging to visualize shock structures and PIV to map velocity fields around particles in the supersonic stream. The raw multi-modal datasets are processed through custom Python pipelines from acquisition through to drag coefficient extraction.</p>
-        <p>I also designed the valve automation system for the supersonic facility, covering component selection, control logic, safety interlocks, and complete technical documentation, giving me direct experience with the full design-to-hardware cycle in a research environment.</p>
+        <p>My thesis investigates how particles behave aerodynamically in supersonic gas flows, a problem with direct relevance to solid rocket propulsion, powder deposition systems, and high-speed particulate transport. Working in the Fluids and Imaging Innovation Lab under Dr. Omid Amili, I designed and built the supersonic wind tunnel facility this research runs on, and developed its experimental techniques — Schlieren imaging to visualize shock structures and PIV/PTV to map velocity fields around particles — from optical layout through calibration and validation. The raw multi-modal datasets are processed through Python and MATLAB pipelines from acquisition through to drag coefficient extraction.</p>
+        <p>I also developed the facility's data acquisition and control system in LabVIEW, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring — documented in full specifications and test reports — giving me direct experience with the complete design-to-hardware cycle in a research environment.</p>
         <p>All the schlieren images are preliminary and I am currently doing fine tuning of the schlieren imaging system.</p>
         <div class="method-tags">
           <span class="tag tag-blue">Schlieren Imaging</span>
-          <span class="tag tag-blue">PIV</span>
+          <span class="tag tag-blue">PIV / PTV</span>
           <span class="tag tag-blue">Supersonic Flow</span>
-          <span class="tag tag-blue">Python</span>
-          <span class="tag tag-blue">Data Acquisition</span>
-          <span class="tag tag-blue">Valve Automation</span>
+          <span class="tag tag-blue">Python · MATLAB</span>
+          <span class="tag tag-blue">LabVIEW</span>
+          <span class="tag tag-blue">DAQ & Control</span>
         </div>
       </div>
       <div class="research-visuals">
@@ -546,7 +548,7 @@
           <a href="https://doi.org/10.1088/1757-899X/1279/1/012003" class="project-doi" target="_blank" rel="noopener">Published ↗</a>
         </div>
         <h3>Hydrogen Fuel Cell Powertrain</h3>
-        <p>Specified and modeled a hydrogen fuel cell powertrain integration for a Maruti 800 chassis. Performed system-level modeling and safety analysis. Results published as a peer-reviewed paper in IOP Conference Series (2023).</p>
+        <p>Specified and modeled a hydrogen fuel cell powertrain integration for a Maruti 800 chassis: system-level layout, packaging, and safety analysis for the fuel cell, power electronics, and balance-of-plant components. Results published as a peer-reviewed paper in IOP Conference Series (2023).</p>
         <div class="project-tags">
           <span class="tag tag-amber">Published</span>
           <span class="tag tag-gray">Fuel Cell</span>
@@ -562,10 +564,11 @@
           <span class="tag tag-blue" style="font-size:0.72rem">Capstone</span>
         </div>
         <h3>Battery Thermal Management (CFD)</h3>
-        <p>Built CFD models in Ansys Fluent to compare active cooling strategies for EV battery packs, assessing coolant concentration effects on pack temperature uniformity and peak cell temperatures. Final-year bachelor's capstone project.</p>
+        <p>Simulated air cooling, mineral oil immersion, and ethylene glycol cooling (30/50/60% concentrations) of a Li-ion battery module in Ansys Fluent (transient, SST k-ω), comparing cell surface temperature and heat extraction against an uncooled baseline. Modeled FTP-75 drive-cycle heat generation in Simulink and designed the module CAD in SolidWorks with a wraparound aluminum cooling channel for the 18650 cells. Final-year bachelor's capstone project.</p>
         <div class="project-tags">
           <span class="tag tag-gray">Ansys Fluent</span>
           <span class="tag tag-gray">CFD</span>
+          <span class="tag tag-gray">Simulink</span>
           <span class="tag tag-gray">EV</span>
           <span class="tag tag-gray">Thermal Management</span>
         </div>
@@ -586,7 +589,7 @@
           Experimental
         </h3>
         <div class="skill-tags">
-          <span>Schlieren Imaging</span><span>Particle Image Velocimetry (PIV)</span><span>Supersonic Flow</span><span>Flow Measurement</span><span>Instrumentation & DAQ</span><span>Lab Setup & Validation</span>
+          <span>Experimental Flow Facilities</span><span>Schlieren Imaging</span><span>PIV / PTV</span><span>Supersonic Wind Tunnel</span><span>Pressure & Temperature Instrumentation</span><span>LabVIEW · DAQ & Control</span><span>Test Planning & Validation</span>
         </div>
       </div>
       <div class="skill-group">
@@ -595,7 +598,7 @@
           Simulation & Software
         </h3>
         <div class="skill-tags">
-          <span>Ansys Fluent (CFD)</span><span>Simulink</span><span>MATLAB</span>
+          <span>Ansys Fluent (CFD · Thermal)</span><span>FEA (Ansys)</span><span>Simulink</span><span>MATLAB</span><span>Heat Transfer & Fluids Fundamentals</span>
         </div>
       </div>
       <div class="skill-group">
@@ -604,7 +607,7 @@
           CAD & Design
         </h3>
         <div class="skill-tags">
-          <span>SolidWorks ★ CSWA</span><span>Assembly Modeling</span><span>Mechanical Design</span><span>Drawing Packages</span><span>Valve System Design</span>
+          <span>SolidWorks ★ CSWA</span><span>Assembly Modeling</span><span>Drawing Packages</span><span>Prototype Development</span><span>DFM Awareness</span>
         </div>
       </div>
       <div class="skill-group">
@@ -613,7 +616,7 @@
           Programming
         </h3>
         <div class="skill-tags">
-          <span>Python</span><span>NumPy · Pandas · SciPy</span><span>Matplotlib</span><span>Git / GitHub</span><span>ML (basics)</span>
+          <span>Python</span><span>NumPy · Pandas · SciPy</span><span>Matplotlib</span><span>MATLAB</span><span>Git / GitHub</span><span>ML (basics)</span>
         </div>
       </div>
     </div>
@@ -659,7 +662,7 @@
         <div class="award-icon">🎓</div>
         <h3>SolidWorks Associate</h3>
         <p>Certified SolidWorks Associate in Mechanical Design (CSWA)</p>
-        <span class="award-date">May 2023 · Dassault Systèmes</span>
+        <span class="award-date">Nov 2022 · Dassault Systèmes</span>
       </div>
 
       <div class="award-card">
