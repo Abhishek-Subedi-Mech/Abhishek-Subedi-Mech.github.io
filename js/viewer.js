@@ -1,23 +1,47 @@
-import * as THREE from 'three';
-import { STLLoader }     from 'three/addons/loaders/STLLoader.js';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+/* three.js is ~1.2 MB, and most visitors never open a 3D tab, so it is pulled in
+   on first use rather than on page load. */
+let THREE, STLLoader, OrbitControls, libsPromise;
+
+function loadLibs() {
+  libsPromise ??= Promise.all([
+    import('three'),
+    import('three/addons/loaders/STLLoader.js'),
+    import('three/addons/controls/OrbitControls.js'),
+  ]).then(([three, stl, orbit]) => {
+    THREE         = three;
+    STLLoader     = stl.STLLoader;
+    OrbitControls = orbit.OrbitControls;
+  });
+  return libsPromise;
+}
 
 const initialized = new WeakSet();
 
-document.addEventListener('open3d', e => {
+document.addEventListener('open3d', async e => {
   const card = e.target;
   if (initialized.has(card)) return;
   initialized.add(card);
+
+  try {
+    await loadLibs();
+  } catch {
+    const err = card.querySelector('.viewer-error');
+    const load = card.querySelector('.viewer-loading');
+    load && (load.style.display = 'none');
+    err  && (err.style.display  = 'flex');
+    return;
+  }
 
   // Wait one frame so the tab panel is painted and has real dimensions
   requestAnimationFrame(() => {
     new ModelViewer(card.querySelector('.viewer-canvas'), {
       modelPath:    card.dataset.model,
       loadingEl:    card.querySelector('.viewer-loading'),
-      guideEl:      card.querySelector('.export-guide'),
+      errorEl:      card.querySelector('.viewer-error'),
       loadingPctEl: card.querySelector('.loading-pct'),
       resetBtn:     card.querySelector('[data-action="reset"]'),
       wireframeBtn: card.querySelector('[data-action="wireframe"]'),
+      panel:        card.querySelector('[data-panel="3d"]'),
     });
   });
 });
@@ -27,16 +51,19 @@ class ModelViewer {
     this.container    = container;
     this.modelPath    = opts.modelPath;
     this.loadingEl    = opts.loadingEl;
-    this.guideEl      = opts.guideEl;
+    this.errorEl      = opts.errorEl;
     this.loadingPctEl = opts.loadingPctEl;
+    this.panel        = opts.panel;
     this.mesh         = null;
     this.material     = null;
     this.wireframe    = false;
+    this.onScreen     = true;
 
     this.initScene();
     this.loadModel();
     this.animate();
     this.bindResize();
+    this.bindVisibility();
 
     opts.resetBtn     && opts.resetBtn.addEventListener('click',     () => this.resetCamera());
     opts.wireframeBtn && opts.wireframeBtn.addEventListener('click', () => this.toggleWireframe());
@@ -53,20 +80,21 @@ class ModelViewer {
     this.container.appendChild(this.renderer.domElement);
 
     this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color(0x0a1828);
+    this.scene.background = new THREE.Color(0x0d0f13);
 
-    const grid = new THREE.GridHelper(14, 24, 0x1e3a5f, 0x0d2140);
+    const grid = new THREE.GridHelper(14, 24, 0x333a44, 0x1c2027);
     this.scene.add(grid);
 
-    this.scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-    const dl1 = new THREE.DirectionalLight(0xffffff, 1.0);
-    dl1.position.set(4, 8, 6);
-    dl1.castShadow = true;
-    this.scene.add(dl1);
-    const dl2 = new THREE.DirectionalLight(0x4488ff, 0.35);
-    dl2.position.set(-4, 2, -4);
-    this.scene.add(dl2);
-    this.scene.add(new THREE.HemisphereLight(0x1a3a6e, 0x080c14, 0.4));
+    this.scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+    const key = new THREE.DirectionalLight(0xffffff, 1.05);
+    key.position.set(4, 8, 6);
+    key.castShadow = true;
+    this.scene.add(key);
+    // warm rim light, tying the viewer to the page's signal colour
+    const rim = new THREE.DirectionalLight(0xff8b3d, 0.4);
+    rim.position.set(-5, 2, -4);
+    this.scene.add(rim);
+    this.scene.add(new THREE.HemisphereLight(0x3a4048, 0x0a0b0d, 0.45));
 
     this.camera = new THREE.PerspectiveCamera(45, w / h, 0.01, 1000);
     this.camera.position.set(0, 6, 12);
@@ -106,14 +134,14 @@ class ModelViewer {
     geometry.computeBoundingBox();
     geometry.translate(0, -geometry.boundingBox.min.y, 0);
 
-    this.material = new THREE.MeshStandardMaterial({ color: 0x8fb8d8, metalness: 0.65, roughness: 0.35 });
+    this.material = new THREE.MeshStandardMaterial({ color: 0xccd2d8, metalness: 0.25, roughness: 0.45 });
     this.mesh = new THREE.Mesh(geometry, this.material);
     this.mesh.castShadow = true;
     this.scene.add(this.mesh);
 
     this.loadingEl && (this.loadingEl.style.display = 'none');
 
-    const dist = maxDim * scale * 1.6;
+    const dist = maxDim * scale * 1.3;
     this.camera.position.set(dist * 0.6, dist * 0.5, dist);
     this.controls.target.set(0, (size.y * scale) / 2, 0);
     this.controls.update();
@@ -121,19 +149,27 @@ class ModelViewer {
 
   onProgress(xhr) {
     if (xhr.total && this.loadingPctEl) {
-      this.loadingPctEl.textContent = 'Loading… ' + Math.round((xhr.loaded / xhr.total) * 100) + '%';
+      this.loadingPctEl.textContent = Math.round((xhr.loaded / xhr.total) * 100) + '%';
     }
   }
 
   onError() {
     this.loadingEl && (this.loadingEl.style.display = 'none');
-    this.guideEl   && (this.guideEl.style.display   = 'flex');
+    this.errorEl   && (this.errorEl.style.display   = 'flex');
   }
 
   animate() {
     requestAnimationFrame(() => this.animate());
+    // skip the draw entirely when the panel is hidden or scrolled away
+    if (!this.onScreen || document.hidden) return;
+    if (!this.panel?.classList.contains('active')) return;
     this.controls.update();
     this.renderer.render(this.scene, this.camera);
+  }
+
+  bindVisibility() {
+    new IntersectionObserver(([e]) => { this.onScreen = e.isIntersecting; }, { threshold: 0 })
+      .observe(this.container);
   }
 
   resetCamera()     { this.controls.reset(); this.controls.autoRotate = true; }

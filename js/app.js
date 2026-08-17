@@ -1,132 +1,192 @@
-// Mark JS as running - enables scroll-reveal animations in CSS
+/* Abhishek Subedi: portfolio interactions
+   Nav, scroll reveal, galleries, and CAD card tabs. */
+
 document.documentElement.classList.add('js-ready');
 
-// ─── NAVIGATION ──────────────────────────────────────────────────────────────
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+/* ─── NAVIGATION ─────────────────────────────────────────────────────────── */
 
 const navbar   = document.getElementById('navbar');
 const navLinks = document.getElementById('nav-links');
 const toggle   = document.getElementById('nav-toggle');
 
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 20);
-  updateActiveLink();
-}, { passive: true });
+// navbar background: one cheap observer instead of a scroll handler
+const sentinel = document.createElement('div');
+sentinel.style.cssText = 'position:absolute;top:0;height:24px;width:1px;pointer-events:none';
+document.body.prepend(sentinel);
+new IntersectionObserver(
+  ([e]) => navbar.classList.toggle('scrolled', !e.isIntersecting)
+).observe(sentinel);
 
 toggle.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  navLinks.classList.toggle('open');
+  const open = toggle.classList.toggle('open');
+  navLinks.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', String(open));
 });
 
 navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => {
     toggle.classList.remove('open');
     navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
   });
 });
 
-function updateActiveLink() {
-  const sections = document.querySelectorAll('section[id]');
-  const scrollY  = window.scrollY + 100;
-  let current    = '';
-  sections.forEach(s => { if (scrollY >= s.offsetTop) current = s.id; });
-  navLinks.querySelectorAll('a').forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
-}
-
-// ─── TYPEWRITER ───────────────────────────────────────────────────────────────
-
-const phrases = [
-  'MS Candidate · University of Toledo · Dec 2026',
-  'Supersonic Flow Researcher',
-  'Schlieren Imaging & PIV',
-  'SolidWorks CSWA Certified',
-  'Open to Work · Toledo, OH',
-];
-let phraseIdx = 0, charIdx = 0, deleting = false;
-const tw = document.getElementById('hero-typewriter');
-
-if (tw) {
-  function typewriter() {
-    const phrase = phrases[phraseIdx];
-    if (!deleting) {
-      tw.textContent = phrase.slice(0, ++charIdx);
-      if (charIdx === phrase.length) { deleting = true; setTimeout(typewriter, 2200); return; }
-    } else {
-      tw.textContent = phrase.slice(0, --charIdx);
-      if (charIdx === 0) { deleting = false; phraseIdx = (phraseIdx + 1) % phrases.length; }
-    }
-    setTimeout(typewriter, deleting ? 38 : 72);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+    toggle.classList.remove('open');
+    navLinks.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.focus();
   }
-  typewriter();
-}
+});
 
-// ─── SCROLL REVEAL ────────────────────────────────────────────────────────────
+// active section: replaces the per-scroll-event offsetTop reads
+const linkFor = new Map();
+navLinks.querySelectorAll('a').forEach(a => linkFor.set(a.getAttribute('href').slice(1), a));
+
+const visible = new Set();
+const sectionOrder = [...document.querySelectorAll('main section[id]')].map(s => s.id);
+
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => e.isIntersecting ? visible.add(e.target.id) : visible.delete(e.target.id));
+  // the topmost section currently in the band wins
+  const current = sectionOrder.find(id => visible.has(id));
+  linkFor.forEach((a, id) => a.classList.toggle('active', id === current));
+}, { rootMargin: '-25% 0px -60% 0px' });
+
+document.querySelectorAll('main section[id]').forEach(s => {
+  if (linkFor.has(s.id)) sectionObserver.observe(s);
+});
+
+/* ─── SCROLL REVEAL ──────────────────────────────────────────────────────── */
 
 const revealObserver = new IntersectionObserver(
   entries => entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    }
+    if (!e.isIntersecting) return;
+    e.target.classList.add('visible');
+    revealObserver.unobserve(e.target);
   }),
-  { threshold: 0.1 }
+  { threshold: 0.08 }
 );
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ─── IMAGE SLIDERS ────────────────────────────────────────────────────────────
+/* ─── IMAGE GALLERIES ────────────────────────────────────────────────────── */
 
 document.querySelectorAll('.img-slider').forEach(slider => {
-  const slides  = slider.querySelectorAll('.slide');
-  const dots    = slider.querySelectorAll('.dot');
-  let current   = 0;
-  let autoTimer = null;
+  const slides  = [...slider.querySelectorAll('.slide')];
+  const dotsBox = slider.querySelector('.slide-dots');
+  if (slides.length < 2) return;
+
+  let current = 0;
+  let timer   = null;
+  let paused  = reduceMotion.matches;   // never auto-advance under reduced motion
+
+  // dots are generated so the markup can't drift out of sync with the slides
+  const dots = slides.map((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.type = 'button';
+    d.setAttribute('aria-label', `Show image ${i + 1} of ${slides.length}`);
+    d.addEventListener('click', () => { go(i); restart(); });
+    dotsBox && dotsBox.appendChild(d);
+    return d;
+  });
+
+  const pauseBtn = document.createElement('button');
+  pauseBtn.type = 'button';
+  pauseBtn.className = 'slide-pause';
+  slider.appendChild(pauseBtn);
+  syncPauseBtn();
+
+  function syncPauseBtn() {
+    pauseBtn.textContent = paused ? '▶' : '❚❚';
+    pauseBtn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+  }
 
   function go(idx) {
     slides[current].classList.remove('active');
-    dots[current] && dots[current].classList.remove('active');
+    dots[current].classList.remove('active');
     current = (idx + slides.length) % slides.length;
     slides[current].classList.add('active');
-    dots[current] && dots[current].classList.add('active');
+    dots[current].classList.add('active');
   }
 
-  function startAuto() { autoTimer = setInterval(() => go(current + 1), 3500); }
-  function stopAuto()  { clearInterval(autoTimer); }
+  function start() { if (!paused && !timer) timer = setInterval(() => go(current + 1), 4200); }
+  function stop()  { clearInterval(timer); timer = null; }
+  function restart() { stop(); start(); }
 
-  slider.querySelector('.slide-prev') && slider.querySelector('.slide-prev').addEventListener('click', () => { stopAuto(); go(current - 1); startAuto(); });
-  slider.querySelector('.slide-next') && slider.querySelector('.slide-next').addEventListener('click', () => { stopAuto(); go(current + 1); startAuto(); });
-  dots.forEach((d, i) => d.addEventListener('click', () => { stopAuto(); go(i); startAuto(); }));
-  slider.addEventListener('mouseenter', stopAuto);
-  slider.addEventListener('mouseleave', startAuto);
-  startAuto();
+  pauseBtn.addEventListener('click', () => {
+    paused = !paused;
+    syncPauseBtn();
+    paused ? stop() : start();
+  });
+
+  slider.querySelector('.slide-prev')?.addEventListener('click', () => { go(current - 1); restart(); });
+  slider.querySelector('.slide-next')?.addEventListener('click', () => { go(current + 1); restart(); });
+
+  // hold while the pointer is over it, and while a control inside has focus
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin',  stop);
+  slider.addEventListener('focusout', start);
+
+  // swipe, so touch users get the control that hover gives everyone else
+  let x0 = null;
+  slider.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+  slider.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) go(current + (dx < 0 ? 1 : -1));
+    x0 = null;
+    start();
+  }, { passive: true });
+
+  // don't animate offscreen
+  new IntersectionObserver(([e]) => e.isIntersecting ? start() : stop(), { threshold: 0.2 }).observe(slider);
+
+  reduceMotion.addEventListener('change', e => {
+    paused = e.matches;
+    syncPauseBtn();
+    paused ? stop() : start();
+  });
 });
 
-// ─── CAD TABS ─────────────────────────────────────────────────────────────────
+/* ─── CAD CARD TABS ──────────────────────────────────────────────────────── */
 
 document.querySelectorAll('.cad-card').forEach(card => {
-  const tabs   = card.querySelectorAll('.tab-btn');
-  const panels = card.querySelectorAll('.tab-panel');
+  const tabs   = [...card.querySelectorAll('.tab-btn')];
+  const panels = [...card.querySelectorAll('.tab-panel')];
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
+  function select(tab) {
+    tabs.forEach(t => t.setAttribute('aria-selected', String(t === tab)));
+    panels.forEach(p => p.classList.remove('active'));
 
-      const panelName = tab.dataset.tab;
-      const panel = card.querySelector('[data-panel="' + panelName + '"]');
-      if (panel) panel.classList.add('active');
+    const name  = tab.dataset.tab;
+    const panel = card.querySelector(`[data-panel="${name}"]`);
+    if (panel) panel.classList.add('active');
 
-      // Autoplay video when switching to that tab
-      if (panelName === 'video') {
-        const vid = panel && panel.querySelector('video');
-        vid && vid.play();
-      }
+    if (name === 'video') {
+      const vid = panel?.querySelector('video');
+      if (vid && !reduceMotion.matches) vid.play().catch(() => {});
+    } else {
+      card.querySelectorAll('video').forEach(v => v.pause());
+    }
 
-      // Dispatch event so viewer.js can initialize lazily
-      if (panelName === '3d') {
-        card.dispatchEvent(new CustomEvent('open3d', { bubbles: true }));
-      }
+    if (name === '3d') card.dispatchEvent(new CustomEvent('open3d', { bubbles: true }));
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    // arrow-key traversal, per the tablist pattern
+    tab.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      e.preventDefault();
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      next.focus();
+      select(next);
     });
   });
 });
