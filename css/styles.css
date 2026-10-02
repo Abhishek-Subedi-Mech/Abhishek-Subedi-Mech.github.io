@@ -362,6 +362,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.1
 .research-advisor { font-size: 0.87rem; color: var(--text-2); margin-bottom: 18px; }
 .research-advisor strong { color: var(--signal); font-weight: 600; }
 .research-desc p { color: var(--text-2); margin-bottom: 15px; line-height: 1.8; }
+.research-desc sub { line-height: 0; }
 .research-note {
   font-family: var(--mono); font-size: 0.72rem; line-height: 1.7;
   color: var(--text-3); border-left: 1px solid var(--signal-dim);
@@ -369,13 +370,21 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.1
 }
 .method-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
 
+/* headline results: the about stat-cards, four across, label above the number */
+.result-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin: 24px 0 0;
+  background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+}
+.result-grid .stat-card { display: flex; flex-direction: column-reverse; justify-content: flex-end; text-align: left; padding: 16px 18px; }
+.result-grid .stat-num { margin: 0; font-size: 1.35rem; }
+.result-grid .stat-num sup { font-size: 0.6em; }
+.result-grid .stat-label { margin: 0 0 6px; }
+
 .research-visuals { display: grid; gap: 12px; }
-.schlieren-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.plate--wide { grid-column: 1 / -1; }
-.schlieren-grid .plate-img { aspect-ratio: 1; }
-.schlieren-grid .plate-img img { object-fit: cover; }
+.bow-plate .plate-img { aspect-ratio: 3 / 1; }
+.tracks-plate .plate-img { aspect-ratio: 1200 / 1064; }
 .rig-plate .plate-img { aspect-ratio: 4 / 3; }
-.rig-plate .plate-img img { object-fit: cover; object-position: center 35%; }
+.rig-plate .plate-img img { object-fit: cover; object-position: center 45%; }
 
 /* ─── CAD PORTFOLIO ───────────────────────────────────────────────────── */
 .cad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
