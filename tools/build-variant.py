@@ -63,7 +63,7 @@ EDITS = [
 
     ("hero lede",
      '<p class="hero-lede">I design and build the instruments that measure <strong>supersonic flow</strong>, then turn what they see into numbers.</p>',
-     '<p class="hero-lede">I model and measure how <strong>heat and fluids move</strong>, from battery packs in Ansys Fluent to supersonic jets in a tunnel I built.</p>'),
+     '<p class="hero-lede">I model and measure how <strong>heat and fluids move</strong>, from battery packs in Ansys Fluent to supersonic jets on a rig my team and I built at the Fluids and Imaging Innovation Lab.</p>'),
 
     ("hero focus line",
      '<dd>Experimental fluids · Thermal systems · CAD</dd>',
