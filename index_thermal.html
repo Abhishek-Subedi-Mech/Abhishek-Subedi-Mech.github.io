@@ -78,11 +78,14 @@
   <div class="nav-inner">
     <a class="nav-brand" href="#hero">Abhishek Subedi</a>
     <div class="nav-links" id="nav-links">
+      <a href="#research">Research</a>
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
-      <a href="#research">Research</a>
       <a href="#cad">CAD</a>
       <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#awards">Awards</a>
+      <a href="#leadership">Leadership</a>
       <a href="#contact">Contact</a>
     </div>
     <a class="btn btn-outline btn-sm" href="assets/biodata.html" target="_blank" rel="noopener">Full profile</a>
@@ -103,11 +106,17 @@
       <p class="hero-lede">I model and measure how <strong>heat and fluids move</strong>, from battery packs in Ansys Fluent to supersonic jets in a tunnel I built.</p>
 
       <div class="hero-ctas">
-        <a href="assets/biodata.html" class="btn btn-primary" target="_blank" rel="noopener">
+        <a href="#research" class="btn btn-primary">
+          See my research
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
+        <a href="assets/biodata.html" class="btn btn-outline" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           View full profile
         </a>
-        <a href="#contact" class="btn btn-outline">Get in touch</a>
+        <a href="#contact" class="btn btn-icon" aria-label="Get in touch">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
         <a href="https://linkedin.com/in/abhishek-subedi-073a36193" class="btn btn-icon" target="_blank" rel="noopener" aria-label="LinkedIn profile">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
@@ -143,21 +152,85 @@
   </div>
 </section>
 
+<!-- ─── RESEARCH ──────────────────────────────────────────────────────── -->
+<section id="research" class="section section-raised">
+  <div class="container">
+    <header class="sec-head reveal">
+      <div class="sec-rule"><span class="sec-line"></span></div>
+      <h2 class="sec-title">Research</h2>
+      <p class="sec-sub">MS thesis · Fluids and Imaging Innovation Lab · University of Toledo · 2025 to 2026</p>
+    </header>
+
+    <figure class="plate bow-plate reveal">
+      <div class="plate-img">
+        <img src="assets/images/research/bow_shock.webp" width="1500" height="500" alt="Schlieren image of a single bead leaving the nozzle with its own bow shock, just upstream of the first shock cell of a supersonic jet" loading="lazy" decoding="async">
+      </div>
+      <figcaption class="plate-cap"><span class="plate-txt">A bead carries its own bow shock into the first shock cell</span></figcaption>
+    </figure>
+
+    <div class="research-layout reveal">
+      <div class="research-desc">
+        <h3>Coefficient of drag in particle-laden supersonic flow</h3>
+        <p class="research-advisor">Advisor: <strong>Dr. Omid Amili</strong> · Fluids and Imaging Innovation Lab</p>
+        <p class="research-lead">How hard does a supersonic jet push on a solid particle? I'm measuring that drag inside the shock cells of an underexpanded jet, on a facility and imaging system I built.</p>
+
+        <h4 class="research-label">The problem</h4>
+        <p>The drag coefficient of a solid particle in supersonic flow is not settled: the correlations in general use disagree by a factor of two at the conditions that matter for solid rocket propulsion, cold-spray deposition, and high-speed particulate transport, and nearly all the data behind them come from shock tubes and ballistic ranges. My thesis measures drag in the complementary configuration, the quasi-steady shock-cell field of an underexpanded supersonic jet.</p>
+
+        <h4 class="research-label">Facility &amp; imaging</h4>
+        <p>I designed and built the facility: a 5.08&nbsp;mm converging nozzle fed through a conditioned settling chamber, with a LabVIEW data acquisition and control system for pressure and temperature instrumentation, valve sequencing, and safety interlocks. A Z-type schlieren system images the jet at 34,035 frames per second, resolving the shock train and the silhouettes of individual beads at the same time. The shock-cell spacing, measured from the images by autocorrelation, fixes the gas state (fully expanded Mach number 1.60, 447&nbsp;m/s), and a Python particle-tracking pipeline turns each bead into a nozzle-referenced velocity and acceleration history.</p>
+
+        <h4 class="research-label">Analysis <span class="research-status">ongoing</span></h4>
+        <p>Because one track gives one equation for several unknown forces, I am separating the non-drag terms experimentally: regressing acceleration on 1/<i>d</i><sub>p</sub> across particles of different size splits it into a drag group and a size-independent pressure-gradient group. The drag-coefficient analysis is ongoing, at particle Reynolds numbers of roughly 20,000 to 40,000, and will be compared against the Henderson, Loth et al., and Clift–Gauvin correlations.</p>
+
+        <dl class="result-grid">
+          <div class="stat-card"><dt class="stat-label">Jet Mach number</dt><dd class="stat-num">1.60</dd></div>
+          <div class="stat-card"><dt class="stat-label">Particle Reynolds no.</dt><dd class="stat-num">20k–40k</dd></div>
+          <div class="stat-card"><dt class="stat-label">Imaging rate</dt><dd class="stat-num">34 kfps</dd></div>
+          <div class="stat-card"><dt class="stat-label">Nozzle exit</dt><dd class="stat-num">5.08 mm</dd></div>
+        </dl>
+
+        <p class="research-note">Talk at the 78th Annual Meeting of the APS Division of Fluid Dynamics (2025) on the development of open-loop supersonic jet rig facilities. Poster at the MEANES 2026 Ted Keith Distinguished Event Poster Session. The high-speed footage also became <em>Riding the Shock Train</em>, a short film prepared for the APS Gallery of Fluid Motion 2026.</p>
+        <div class="method-tags">
+          <span class="tag tag-signal">Schlieren imaging</span>
+          <span class="tag tag-signal">Particle tracking (PTV)</span>
+          <span class="tag tag-signal">Supersonic flow</span>
+          <span class="tag">Multiphase drag</span>
+          <span class="tag">Python · MATLAB</span>
+          <span class="tag">LabVIEW</span>
+        </div>
+      </div>
+
+      <div class="research-visuals">
+        <figure class="plate tracks-plate">
+          <div class="plate-img">
+            <img src="assets/images/research/particle_tracks.webp" width="1200" height="1064" alt="Four schlieren frames 58.8 microseconds apart showing two tracked particles, circled in blue and orange, moving downstream through the shock-diamond train" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="plate-cap"><span class="plate-txt">Two tracked beads crossing the shock train · 58.8 µs per frame</span></figcaption>
+        </figure>
+        <figure class="plate rig-plate">
+          <div class="plate-img">
+            <img src="assets/images/research/optics_bench.webp" width="1400" height="1050" alt="Supersonic jet facility and Z-type schlieren optics on an optical table, with the high-speed camera on the right" loading="lazy" decoding="async">
+          </div>
+          <figcaption class="plate-cap"><span class="plate-txt">Jet facility and Z-type schlieren bench · University of Toledo</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── ABOUT ──────────────────────────────────────────────────────────── -->
 <section id="about" class="section">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">01</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">About</h2>
     </header>
 
     <div class="about-grid reveal">
       <div class="about-text">
-        <p>I'm a Mechanical Engineering graduate student at the University of Toledo (M.S., expected December 2026), with a background that spans experimental fluid mechanics, thermal systems, CAD, and hands-on fabrication.</p>
-        <p>My thesis measures the aerodynamic drag of particles in supersonic flow, a problem that sits at the intersection of high-speed gas dynamics and multiphase flow. I designed and built the supersonic wind tunnel facility this work runs on, and developed its experimental techniques comprising of Schlieren imaging for flow visualization and PIV/PTV for velocity field measurement, from optical layout through calibration and validation. I also developed the facility's LabVIEW data acquisition and control system, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring, and I wrote the Python and MATLAB pipelines that turn the high-speed footage into particle kinematics and, finally, a measured drag coefficient.</p>
-        <p>Before Toledo, I earned my B.E. in Mechanical Engineering from Kathmandu University (GPA 3.5/4.0), where I worked across a range of hands-on projects, from fabricating a pipe-cleaning crawler robot to modeling a hydrogen fuel cell powertrain retrofit that led to a peer-reviewed publication in IOP Conference Series (2023).</p>
-        <p>One of the formative experiences of my undergraduate years was leading <strong>Team Junkiri</strong> in the Shell Eco-Marathon Asia, an international competition where student teams design and build ultra-efficient vehicles. I led the SolidWorks chassis and surface modeling, coordinated fabrication across a multi-person team, and managed the logistics of competing in Indonesia. On the powertrain side, we retrofitted the vehicle's lawnmower engine with an electronic fuel injection (EFI) system in adherence to competition guidelines and manually tuned it until the engine ran at its most efficient state. More than the result, it was an education in what it takes to take a design from a screen to a physical object under real constraints.</p>
-        <p>I'm based in Toledo, OH and graduating in December 2026, open to relocation for the right opportunity in mechanical design, thermal and fluid systems, R&D, or EV/clean energy engineering.</p>
+        <p>I'm a Mechanical Engineering graduate student at the University of Toledo (M.S., December 2026), with a background that spans experimental fluid mechanics, thermal systems, CAD, and hands-on fabrication. My thesis measures the aerodynamic drag of particles in supersonic flow, on a jet facility and imaging system I designed and built.</p>
+        <p>Before Toledo, I earned my B.E. in Mechanical Engineering from Kathmandu University (GPA 3.5/4.0), where I led <strong>Team Junkiri</strong> at the Shell Eco-Marathon Asia and co-authored a peer-reviewed paper on a hydrogen fuel cell powertrain retrofit. Those years taught me what it takes to get a design from a screen to a physical object under real constraints.</p>
       </div>
 
       <div class="about-sidebar">
@@ -173,23 +246,9 @@
         <div>
           <div class="stat-grid">
             <div class="stat-card"><span class="stat-num">4.0</span><span class="stat-label">MS GPA</span></div>
-            <div class="stat-card"><span class="stat-num">1</span><span class="stat-label">Publication</span></div>
-            <div class="stat-card"><span class="stat-num">8+</span><span class="stat-label">Projects</span></div>
-            <div class="stat-card"><span class="stat-num">TA</span><span class="stat-label">Outstanding</span></div>
-          </div>
-          <div class="about-info">
-            <div class="info-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              Toledo, OH · Open to relocation
-            </div>
-            <div class="info-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-              University of Toledo
-            </div>
-            <div class="info-row">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-              Graduating December 2026
-            </div>
+            <div class="stat-card"><span class="stat-num">2</span><span class="stat-label">Paper &amp; talk</span></div>
+            <div class="stat-card"><span class="stat-num">34k</span><span class="stat-label">fps schlieren</span></div>
+            <div class="stat-card"><span class="stat-num">CSWA</span><span class="stat-label">SolidWorks</span></div>
           </div>
         </div>
       </div>
@@ -201,7 +260,7 @@
 <section id="experience" class="section section-raised">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">02</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Experience</h2>
     </header>
 
@@ -219,17 +278,17 @@
           </div>
           <p class="exp-type">Research</p>
           <ul class="exp-list">
-            <li>Designed, built, and operate a supersonic wind tunnel facility for experimental study of drag in particle-laden flow; developed the experimental techniques on the facility, including Schlieren imaging for flow visualization and PIV/PTV for quantitative velocity field measurement, from optical layout through calibration and validation of results.</li>
-            <li>Developed the facility's data acquisition and control system in LabVIEW, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring; documented the full system in specifications and test reports.</li>
+            <li>Designed, built, and operate the supersonic jet facility behind my thesis, including its LabVIEW data acquisition and control system (pressure and temperature instrumentation, valve sequencing, safety interlocks) and its schlieren and PIV/PTV diagnostics, documented in specifications and test reports.</li>
             <li>Built a Python particle-tracking pipeline for 34&nbsp;kHz schlieren footage and an experimental force-separation method; drag-coefficient analysis at particle Reynolds numbers of roughly 20,000 to 40,000 is ongoing.</li>
-            <li>Iterate hardware designs through prototype, test, and redesign cycles; correlate experimental measurements against analytical and simulation predictions.</li>
           </ul>
-          <p class="exp-type">Teaching</p>
-          <ul class="exp-list">
-            <li><strong>Heat Transfer Laboratory:</strong> supervised conduction, convection, and heat exchanger experiments; reinforced theory and ensured safe equipment operation.</li>
-            <li><strong>Fluid Mechanics Laboratory:</strong> guided students through experimental setups, data acquisition, and analysis.</li>
-            <li><strong>Thermodynamics:</strong> assisted course instruction, held office hours, and supported grading.</li>
-          </ul>
+          <div class="fold" data-fold="Show teaching roles">
+            <p class="exp-type">Teaching</p>
+            <ul class="exp-list">
+              <li><strong>Heat Transfer Laboratory:</strong> supervised conduction, convection, and heat exchanger experiments; reinforced theory and ensured safe equipment operation.</li>
+              <li><strong>Fluid Mechanics Laboratory:</strong> guided students through experimental setups, data acquisition, and analysis.</li>
+              <li><strong>Thermodynamics:</strong> assisted course instruction, held office hours, and supported grading.</li>
+            </ul>
+          </div>
           <div class="exp-tags">
             <span class="tag tag-signal">Schlieren imaging</span>
             <span class="tag tag-signal">PIV / PTV</span>
@@ -286,70 +345,11 @@
   </div>
 </section>
 
-<!-- ─── RESEARCH ──────────────────────────────────────────────────────── -->
-<section id="research" class="section">
-  <div class="container">
-    <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">03</span><span class="sec-line"></span></div>
-      <h2 class="sec-title">Research</h2>
-      <p class="sec-sub">MS thesis · Fluids and Imaging Innovation Lab · University of Toledo · 2025 to 2026</p>
-    </header>
-
-    <div class="research-layout reveal">
-      <div class="research-desc">
-        <h3>Coefficient of drag in particle-laden supersonic flow</h3>
-        <p class="research-advisor">Advisor: <strong>Dr. Omid Amili</strong> · Fluids and Imaging Innovation Lab</p>
-        <p>The drag coefficient of a solid particle in supersonic flow is not settled: the correlations in general use disagree by a factor of two at the conditions that matter for solid rocket propulsion, cold-spray deposition, and high-speed particulate transport, and nearly all the data behind them come from shock tubes and ballistic ranges. My thesis measures drag in the complementary configuration, the quasi-steady shock-cell field of an underexpanded supersonic jet.</p>
-        <p>I designed and built the facility: a 5.08&nbsp;mm converging nozzle fed through a conditioned settling chamber, with a LabVIEW data acquisition and control system for pressure and temperature instrumentation, valve sequencing, and safety interlocks. A Z-type schlieren system images the jet at 34,035 frames per second, resolving the shock train and the silhouettes of individual beads at the same time. The shock-cell spacing, measured from the images by autocorrelation, fixes the gas state (fully expanded Mach number 1.60, 447&nbsp;m/s), and a Python particle-tracking pipeline turns each bead into a nozzle-referenced velocity and acceleration history.</p>
-        <p>Because one track gives one equation for several unknown forces, I am separating the non-drag terms experimentally: regressing acceleration on 1/<i>d</i><sub>p</sub> across particles of different size splits it into a drag group and a size-independent pressure-gradient group. The drag-coefficient analysis is ongoing, at particle Reynolds numbers of roughly 20,000 to 40,000, and will be compared against the Henderson, Loth et al., and Clift–Gauvin correlations.</p>
-
-        <dl class="result-grid">
-          <div class="stat-card"><dt class="stat-label">Jet Mach number</dt><dd class="stat-num">1.60</dd></div>
-          <div class="stat-card"><dt class="stat-label">Particle Reynolds no.</dt><dd class="stat-num">20k–40k</dd></div>
-          <div class="stat-card"><dt class="stat-label">Imaging rate</dt><dd class="stat-num">34 kfps</dd></div>
-          <div class="stat-card"><dt class="stat-label">Nozzle exit</dt><dd class="stat-num">5.08 mm</dd></div>
-        </dl>
-
-        <p class="research-note">Talk at the 78th Annual Meeting of the APS Division of Fluid Dynamics (2025) on the development of open-loop supersonic jet rig facilities. Poster at the MEANES 2026 Ted Keith Distinguished Event Poster Session. The high-speed footage also became <em>Riding the Shock Train</em>, a short film prepared for the APS Gallery of Fluid Motion 2026.</p>
-        <div class="method-tags">
-          <span class="tag tag-signal">Schlieren imaging</span>
-          <span class="tag tag-signal">Particle tracking (PTV)</span>
-          <span class="tag tag-signal">Supersonic flow</span>
-          <span class="tag">Multiphase drag</span>
-          <span class="tag">Python · MATLAB</span>
-          <span class="tag">LabVIEW</span>
-        </div>
-      </div>
-
-      <div class="research-visuals">
-        <figure class="plate bow-plate">
-          <div class="plate-img">
-            <img src="assets/images/research/bow_shock.webp" width="1500" height="500" alt="Schlieren image of a single bead leaving the nozzle with its own bow shock, just upstream of the first shock cell of a supersonic jet" loading="lazy" decoding="async">
-          </div>
-          <figcaption class="plate-cap"><span class="plate-txt">A bead carries its own bow shock into the first shock cell</span></figcaption>
-        </figure>
-        <figure class="plate tracks-plate">
-          <div class="plate-img">
-            <img src="assets/images/research/particle_tracks.webp" width="1200" height="1064" alt="Four schlieren frames 58.8 microseconds apart showing two tracked particles, circled in blue and orange, moving downstream through the shock-diamond train" loading="lazy" decoding="async">
-          </div>
-          <figcaption class="plate-cap"><span class="plate-txt">Two tracked beads crossing the shock train · 58.8 µs per frame</span></figcaption>
-        </figure>
-        <figure class="plate rig-plate">
-          <div class="plate-img">
-            <img src="assets/images/research/optics_bench.webp" width="1400" height="1050" alt="Supersonic jet facility and Z-type schlieren optics on an optical table, with the high-speed camera on the right" loading="lazy" decoding="async">
-          </div>
-          <figcaption class="plate-cap"><span class="plate-txt">Jet facility and Z-type schlieren bench · University of Toledo</span></figcaption>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ─── CAD PORTFOLIO ─────────────────────────────────────────────────── -->
-<section id="cad" class="section section-raised">
+<section id="cad" class="section">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">04</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">CAD portfolio</h2>
       <p class="sec-sub">SolidWorks · CSWA certified · every model built from scratch</p>
     </header>
@@ -543,10 +543,10 @@
 </section>
 
 <!-- ─── UNDERGRAD PROJECTS ────────────────────────────────────────────── -->
-<section id="projects" class="section">
+<section id="projects" class="section section-raised">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">05</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Undergraduate projects</h2>
       <p class="sec-sub">Kathmandu University · Department of Mechanical Engineering</p>
     </header>
@@ -598,10 +598,10 @@
 </section>
 
 <!-- ─── SKILLS ────────────────────────────────────────────────────────── -->
-<section id="skills" class="section section-raised">
+<section id="skills" class="section">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">06</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Skills</h2>
     </header>
 
@@ -647,14 +647,15 @@
 </section>
 
 <!-- ─── PUBLICATION ───────────────────────────────────────────────────── -->
-<section id="publications" class="section">
+<section id="publications" class="section section-raised">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">07</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Publication &amp; talks</h2>
     </header>
 
-    <div class="pub-card reveal">
+    <div class="pub-grid reveal">
+    <div class="pub-card">
       <div class="pub-badge">Conference paper</div>
       <p class="pub-citation">
         Y. Shrestha, <strong>A. Subedi</strong>, M. Sapkota, P. Paudel, N. K. Yadav, and B. S. Thapa,
@@ -667,7 +668,7 @@
       </a>
     </div>
 
-    <div class="pub-card reveal">
+    <div class="pub-card">
       <div class="pub-badge">Conference talk · APS DFD 2025</div>
       <p class="pub-citation">
         <strong>A. Subedi</strong>, N. Narwekar, S. Thapa, and O. Amili,
@@ -675,14 +676,15 @@
         <em>78th Annual Meeting of the APS Division of Fluid Dynamics</em>, 2025.
       </p>
     </div>
+    </div>
   </div>
 </section>
 
 <!-- ─── AWARDS & CERTIFICATIONS ──────────────────────────────────────── -->
-<section id="awards" class="section section-raised">
+<section id="awards" class="section">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">08</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Awards &amp; certifications</h2>
     </header>
 
@@ -724,10 +726,10 @@
 </section>
 
 <!-- ─── LEADERSHIP ────────────────────────────────────────────────────── -->
-<section id="leadership" class="section">
+<section id="leadership" class="section section-raised">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">09</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Leadership</h2>
       <p class="sec-sub">Student leadership and community engagement at Kathmandu University</p>
     </header>
@@ -754,7 +756,7 @@
           <h3>Shell Eco-Marathon Asia 2022</h3>
           <p class="lead-org">Team Junkiri · Kathmandu University, Nepal</p>
           <p class="lead-date">Aug 2021 to Oct 2022</p>
-          <p>Led a student team in designing and building an ultra-efficient vehicle for the Shell Eco-Marathon Asia competition held in Indonesia. Responsible for full vehicle chassis and surface modeling in SolidWorks, coordinating fabrication across the team, and managing all international competition logistics. On the powertrain side, we retrofitted the vehicle's lawnmower engine with an electronic fuel injection (EFI) system in adherence to competition guidelines and manually tuned it to run the engine at its most efficient state.</p>
+          <p class="fold" data-fold="Read more">Led a student team in designing and building an ultra-efficient vehicle for the Shell Eco-Marathon Asia competition held in Indonesia. Responsible for full vehicle chassis and surface modeling in SolidWorks, coordinating fabrication across the team, and managing all international competition logistics. On the powertrain side, we retrofitted the vehicle's lawnmower engine with an electronic fuel injection (EFI) system in adherence to competition guidelines and manually tuned it to run the engine at its most efficient state.</p>
           <div class="lead-tags">
             <span class="tag tag-signal">SolidWorks</span>
             <span class="tag tag-signal">Vehicle design</span>
@@ -772,7 +774,7 @@
         <h3>Association of Mechanical Engineering Students</h3>
         <p class="lead-org">Kathmandu University, Dhulikhel, Nepal</p>
         <p class="lead-date">May 2020 to Aug 2021</p>
-        <p>Served as Vice President of the departmental student association, supporting organizational activities, coordinating department events, and representing student interests within the Mechanical Engineering program.</p>
+        <p class="fold" data-fold="Read more">Served as Vice President of the departmental student association, supporting organizational activities, coordinating department events, and representing student interests within the Mechanical Engineering program.</p>
       </div>
 
       <div class="lead-card">
@@ -783,7 +785,7 @@
         <h3>University Scholar Conference, 1st Edition</h3>
         <p class="lead-org">Kathmandu University, Dhulikhel, Nepal</p>
         <p class="lead-date">2021</p>
-        <p>Contributed to organizing the inaugural University Scholar Conference at Kathmandu University, coordinating logistics and supporting the execution of the institution's first formal academic conference.</p>
+        <p class="fold" data-fold="Read more">Contributed to organizing the inaugural University Scholar Conference at Kathmandu University, coordinating logistics and supporting the execution of the institution's first formal academic conference.</p>
       </div>
 
     </div>
@@ -791,10 +793,10 @@
 </section>
 
 <!-- ─── CONTACT ───────────────────────────────────────────────────────── -->
-<section id="contact" class="section section-raised">
+<section id="contact" class="section">
   <div class="container">
     <header class="sec-head reveal">
-      <div class="sec-rule"><span class="sec-idx">10</span><span class="sec-line"></span></div>
+      <div class="sec-rule"><span class="sec-line"></span></div>
       <h2 class="sec-title">Get in touch</h2>
     </header>
 

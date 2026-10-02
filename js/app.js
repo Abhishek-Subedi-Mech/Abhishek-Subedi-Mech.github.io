@@ -190,3 +190,95 @@ document.querySelectorAll('.cad-card').forEach(card => {
     });
   });
 });
+
+/* ─── PHONE FOLDS ────────────────────────────────────────────────────────── */
+// Secondary detail (.fold) collapses behind a toggle; CSS shows the toggle and
+// hides the content only on narrow screens, so desktop is untouched.
+
+document.querySelectorAll('.fold').forEach((el, i) => {
+  const label = el.dataset.fold || 'Read more';
+  const btn = document.createElement('button');
+  btn.type = 'button';
+  btn.className = 'fold-toggle';
+  btn.textContent = label;
+  el.id ||= `fold-${i}`;
+  btn.setAttribute('aria-controls', el.id);
+  btn.setAttribute('aria-expanded', 'false');
+  btn.addEventListener('click', () => {
+    const open = el.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+    btn.textContent = open ? 'Show less' : label;
+  });
+  el.after(btn);
+});
+
+/* ─── LIGHTBOX ───────────────────────────────────────────────────────────── */
+// Schlieren detail and CAD renders are lost at column width, so every figure
+// opens full-screen. Slider images open as a set and keep their arrows.
+
+const zoomables = document.querySelectorAll('.plate-img img, .img-slider .slide, .award-img');
+
+if (zoomables.length && 'HTMLDialogElement' in window) {
+  const box = document.createElement('dialog');
+  box.className = 'lightbox';
+  box.setAttribute('aria-label', 'Image viewer');
+  box.innerHTML = `
+    <figure class="lb-fig"><img class="lb-img" alt=""><figcaption class="lb-cap"></figcaption></figure>
+    <button type="button" class="lb-btn lb-close" aria-label="Close">&#10005;</button>
+    <button type="button" class="lb-btn lb-prev" aria-label="Previous image">&#8249;</button>
+    <button type="button" class="lb-btn lb-next" aria-label="Next image">&#8250;</button>`;
+  document.body.appendChild(box);
+
+  const lbImg = box.querySelector('.lb-img');
+  const lbCap = box.querySelector('.lb-cap');
+  const imgOf = el => (el.tagName === 'IMG' ? el : el.querySelector('img'));
+  let set = [];
+  let at = 0;
+  let opener = null;
+
+  function show(i) {
+    at = (i + set.length) % set.length;
+    const img = imgOf(set[at]);
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    const cap = set[at].closest('figure')?.querySelector('.plate-txt');
+    lbCap.textContent = cap ? cap.textContent : img.alt;
+  }
+
+  function open(el) {
+    const slider = el.closest('.img-slider');
+    set = slider ? [...slider.querySelectorAll('.slide')] : [el];
+    box.classList.toggle('lb-single', set.length < 2);
+    opener = document.activeElement;
+    show(set.indexOf(el));
+    box.showModal();
+  }
+
+  zoomables.forEach(el => {
+    el.classList.add('zoomable');
+    // standalone figures become buttons; inside a slider its own controls keep focus order
+    if (!el.closest('.img-slider')) {
+      el.tabIndex = 0;
+      el.setAttribute('role', 'button');
+      el.setAttribute('aria-label', `Enlarge image: ${imgOf(el).alt}`);
+      el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(el); }
+      });
+    }
+    el.addEventListener('click', () => open(el));
+  });
+
+  box.querySelector('.lb-close').addEventListener('click', () => box.close());
+  box.querySelector('.lb-prev').addEventListener('click', () => show(at - 1));
+  box.querySelector('.lb-next').addEventListener('click', () => show(at + 1));
+  // a click anywhere but the image or a control closes it
+  box.addEventListener('click', e => {
+    if (e.target === box || e.target.classList.contains('lb-fig')) box.close();
+  });
+  box.addEventListener('keydown', e => {
+    if (set.length < 2) return;
+    if (e.key === 'ArrowLeft')  show(at - 1);
+    if (e.key === 'ArrowRight') show(at + 1);
+  });
+  box.addEventListener('close', () => { lbImg.removeAttribute('src'); opener?.focus?.(); });
+}
