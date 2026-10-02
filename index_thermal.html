@@ -137,7 +137,6 @@
              fetchpriority="high" decoding="async">
       </div>
       <figcaption class="plate-cap">
-        <span class="plate-id">FIG. 01</span>
         <span class="plate-txt">Shock diamonds in a free supersonic jet · Schlieren</span>
       </figcaption>
     </figure>
@@ -167,7 +166,6 @@
             <img src="assets/images/headshot.webp" width="700" height="700" alt="Portrait of Abhishek Subedi" loading="lazy" decoding="async">
           </div>
           <figcaption class="plate-cap">
-            <span class="plate-id">FIG. 02</span>
             <span class="plate-txt">Abhishek Subedi · Toledo, OH</span>
           </figcaption>
         </figure>
@@ -223,7 +221,7 @@
           <ul class="exp-list">
             <li>Designed, built, and operate a supersonic wind tunnel facility for experimental study of drag in particle-laden flow; developed the experimental techniques on the facility, including Schlieren imaging for flow visualization and PIV/PTV for quantitative velocity field measurement, from optical layout through calibration and validation of results.</li>
             <li>Developed the facility's data acquisition and control system in LabVIEW, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring; documented the full system in specifications and test reports.</li>
-            <li>Built a Python particle-tracking pipeline for 34&nbsp;kHz schlieren footage and an experimental force-separation method; measured a particle drag coefficient of 0.58&nbsp;±&nbsp;0.12 at particle Mach 1.2 and compared it against the Henderson, Loth, and Clift–Gauvin correlations with a full uncertainty budget.</li>
+            <li>Built a Python particle-tracking pipeline for 34&nbsp;kHz schlieren footage and an experimental force-separation method; drag-coefficient analysis at particle Reynolds numbers of roughly 20,000 to 40,000 is ongoing.</li>
             <li>Iterate hardware designs through prototype, test, and redesign cycles; correlate experimental measurements against analytical and simulation predictions.</li>
           </ul>
           <p class="exp-type">Teaching</p>
@@ -303,22 +301,21 @@
         <p class="research-advisor">Advisor: <strong>Dr. Omid Amili</strong> · Fluids and Imaging Innovation Lab</p>
         <p>The drag coefficient of a solid particle in supersonic flow is not settled: the correlations in general use disagree by a factor of two at the conditions that matter for solid rocket propulsion, cold-spray deposition, and high-speed particulate transport, and nearly all the data behind them come from shock tubes and ballistic ranges. My thesis measures drag in the complementary configuration, the quasi-steady shock-cell field of an underexpanded supersonic jet.</p>
         <p>I designed and built the facility: a 5.08&nbsp;mm converging nozzle fed through a conditioned settling chamber, with a LabVIEW data acquisition and control system for pressure and temperature instrumentation, valve sequencing, and safety interlocks. A Z-type schlieren system images the jet at 34,035 frames per second, resolving the shock train and the silhouettes of individual beads at the same time. The shock-cell spacing, measured from the images by autocorrelation, fixes the gas state (fully expanded Mach number 1.60, 447&nbsp;m/s), and a Python particle-tracking pipeline turns each bead into a nozzle-referenced velocity and acceleration history.</p>
-        <p>Because one track gives one equation for several unknown forces, I separated the non-drag terms experimentally: regressing acceleration on 1/<i>d</i><sub>p</sub> across particles of different size splits it into a drag group and a size-independent pressure-gradient group, which carries 21 to 43 percent of the acceleration in the first shock cells and vanishes near five exit diameters. The measured drag coefficient sits inside the band the correlations bracket, about 20 to 35 percent above the incompressible value and below Henderson and Loth et al. An uncertainty budget shows the inferred gas velocity dominates the error, which makes tracer PIV of the gas phase the next step.</p>
+        <p>Because one track gives one equation for several unknown forces, I am separating the non-drag terms experimentally: regressing acceleration on 1/<i>d</i><sub>p</sub> across particles of different size splits it into a drag group and a size-independent pressure-gradient group. The drag-coefficient analysis is ongoing, at particle Reynolds numbers of roughly 20,000 to 40,000, and will be compared against the Henderson, Loth et al., and Clift–Gauvin correlations.</p>
 
         <dl class="result-grid">
-          <div class="stat-card"><dt class="stat-label">Drag coefficient</dt><dd class="stat-num">0.58&thinsp;±&thinsp;0.12</dd></div>
           <div class="stat-card"><dt class="stat-label">Jet Mach number</dt><dd class="stat-num">1.60</dd></div>
-          <div class="stat-card"><dt class="stat-label">Particle Reynolds no.</dt><dd class="stat-num">1.6–3.4×10<sup>4</sup></dd></div>
+          <div class="stat-card"><dt class="stat-label">Particle Reynolds no.</dt><dd class="stat-num">20k–40k</dd></div>
           <div class="stat-card"><dt class="stat-label">Imaging rate</dt><dd class="stat-num">34 kfps</dd></div>
+          <div class="stat-card"><dt class="stat-label">Nozzle exit</dt><dd class="stat-num">5.08 mm</dd></div>
         </dl>
 
-        <p class="research-note">Presented as a poster at the MEANES 2026 Ted Keith Distinguished Event Poster Session. The high-speed footage also became <em>Riding the Shock Train</em>, a short film prepared for the APS Gallery of Fluid Motion 2026.</p>
+        <p class="research-note">Talk at APS 2025 on the jet rig construction and schlieren imaging of supersonic jets. Poster at the MEANES 2026 Ted Keith Distinguished Event Poster Session. The high-speed footage also became <em>Riding the Shock Train</em>, a short film prepared for the APS Gallery of Fluid Motion 2026.</p>
         <div class="method-tags">
           <span class="tag tag-signal">Schlieren imaging</span>
           <span class="tag tag-signal">Particle tracking (PTV)</span>
           <span class="tag tag-signal">Supersonic flow</span>
           <span class="tag">Multiphase drag</span>
-          <span class="tag">Uncertainty analysis</span>
           <span class="tag">Python · MATLAB</span>
           <span class="tag">LabVIEW</span>
         </div>
@@ -329,19 +326,19 @@
           <div class="plate-img">
             <img src="assets/images/research/bow_shock.webp" width="1500" height="500" alt="Schlieren image of a single bead leaving the nozzle with its own bow shock, just upstream of the first shock cell of a supersonic jet" loading="lazy" decoding="async">
           </div>
-          <figcaption class="plate-cap"><span class="plate-id">FIG. 03</span><span class="plate-txt">A bead carries its own bow shock into the first shock cell</span></figcaption>
+          <figcaption class="plate-cap"><span class="plate-txt">A bead carries its own bow shock into the first shock cell</span></figcaption>
         </figure>
         <figure class="plate tracks-plate">
           <div class="plate-img">
             <img src="assets/images/research/particle_tracks.webp" width="1200" height="1064" alt="Four schlieren frames 58.8 microseconds apart showing two tracked particles, circled in blue and orange, moving downstream through the shock-diamond train" loading="lazy" decoding="async">
           </div>
-          <figcaption class="plate-cap"><span class="plate-id">FIG. 04</span><span class="plate-txt">Two tracked beads crossing the shock train · 58.8 µs per frame</span></figcaption>
+          <figcaption class="plate-cap"><span class="plate-txt">Two tracked beads crossing the shock train · 58.8 µs per frame</span></figcaption>
         </figure>
         <figure class="plate rig-plate">
           <div class="plate-img">
             <img src="assets/images/research/optics_bench.webp" width="1400" height="1050" alt="Supersonic jet facility and Z-type schlieren optics on an optical table, with the high-speed camera on the right" loading="lazy" decoding="async">
           </div>
-          <figcaption class="plate-cap"><span class="plate-id">FIG. 05</span><span class="plate-txt">Jet facility and Z-type schlieren bench · University of Toledo</span></figcaption>
+          <figcaption class="plate-cap"><span class="plate-txt">Jet facility and Z-type schlieren bench · University of Toledo</span></figcaption>
         </figure>
       </div>
     </div>
@@ -654,7 +651,7 @@
   <div class="container">
     <header class="sec-head reveal">
       <div class="sec-rule"><span class="sec-idx">07</span><span class="sec-line"></span></div>
-      <h2 class="sec-title">Publication</h2>
+      <h2 class="sec-title">Publication &amp; talks</h2>
     </header>
 
     <div class="pub-card reveal">
@@ -668,6 +665,14 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         10.1088/1757-899X/1279/1/012003
       </a>
+    </div>
+
+    <div class="pub-card reveal">
+      <div class="pub-badge">Conference talk · APS 2025</div>
+      <p class="pub-citation">
+        Talk on the construction of a supersonic jet rig and schlieren imaging of supersonic jets,
+        <em>American Physical Society (APS)</em>, 2025.
+      </p>
     </div>
   </div>
 </section>
