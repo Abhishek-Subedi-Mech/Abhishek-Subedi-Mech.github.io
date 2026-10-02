@@ -3,21 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abhishek Subedi - Full Profile</title>
+  <title>Abhishek Subedi | Full Profile</title>
+  <meta name="description" content="Full profile of Abhishek Subedi, MS Mechanical Engineering, University of Toledo: research, experience, projects, skills, publications, and awards.">
+  <link rel="canonical" href="https://abhisheksubedi.name.np/assets/biodata.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b0d'/%3E%3Cpath d='M16 5l6 6-6 6-6-6z' fill='%23ff8b3d'/%3E%3Cpath d='M16 18l4.5 4.5L16 27l-4.5-4.5z' fill='%23b35f26'/%3E%3C/svg%3E">
+  <!-- same type as the main site: Archivo (display) · IBM Plex Sans (body) · IBM Plex Mono (labels) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent: #111111;
-      --text: #111111;
-      --sub: #555555;
-      --border: #c8c8c8;
-      --bg: #f0f0f0;
-      --green: #333333;
+      /* the site's amber, darkened until it passes 4.5:1 as text on white */
+      --accent: #b4520f;
+      --text: #14161a;
+      --sub: #50565f;
+      --border: #d4d6db;
+      --bg: #0a0b0d;
+      --rule: #e3e5e9;
+      --display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+      --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.55;
@@ -26,17 +36,30 @@
 
     .page {
       max-width: 880px;
-      margin: 2rem auto;
+      margin: 0 auto 2rem;
       background: #fff;
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 6px;
       padding: 3rem 3.5rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
 
+    /* ── Back to the site ────────────────────────────── */
+    .topbar {
+      max-width: 880px; margin: 0 auto; padding: 1.1rem 0.25rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .topbar a { color: #aab1ba; text-decoration: none; }
+    .topbar a:hover { color: #ff8b3d; }
+    .topbar .print-btn { padding: 0.45rem 1rem; font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
     /* ── Header ─────────────────────────────────────── */
-    .hd-name { font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; }
-    .hd-title { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-top: 0.25rem; }
+    .hd-name { font-family: var(--display); font-size: 2.3rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; display: flex; align-items: center; gap: 0.6rem; }
+    .hd-name::before {
+      content: ''; width: 0.45em; height: 0.45em; flex-shrink: 0; background: #ff8b3d;
+      clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);   /* the site's shock-diamond mark */
+    }
+    .hd-title { font-size: 0.95rem; color: var(--accent); font-weight: 600; margin-top: 0.35rem; }
     .hd-contacts {
       display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem;
       margin-top: 0.65rem; font-size: 0.84rem; color: var(--sub);
@@ -47,13 +70,14 @@
     /* ── Section headings ────────────────────────────── */
     section { margin-top: 1.65rem; }
     h2 {
+      font-family: var(--mono);
       font-size: 0.72rem;
-      font-weight: 800;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.13em;
       color: var(--accent);
-      padding-bottom: 0.3rem;
-      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--rule);
       margin-bottom: 0.8rem;
     }
 
@@ -66,7 +90,7 @@
     .two-col strong { font-size: 0.92rem; }
     .date { font-size: 0.8rem; color: var(--sub); white-space: nowrap; flex-shrink: 0; }
     .inst-line { font-size: 0.84rem; color: var(--sub); }
-    .gpa { font-size: 0.82rem; color: var(--green); font-weight: 700; }
+    .gpa { font-size: 0.82rem; font-weight: 700; }
     .thesis-line { font-size: 0.84rem; margin-top: 0.15rem; }
 
     /* ── Experience ──────────────────────────────────── */
@@ -74,10 +98,17 @@
     .exp-title { font-weight: 700; font-size: 0.92rem; }
     .exp-org { font-size: 0.83rem; color: var(--sub); margin-bottom: 0.3rem; }
     .sub-label {
-      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.06em; color: var(--sub);
-      margin: 0.4rem 0 0.2rem;
+      font-family: var(--mono); font-size: 0.68rem; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--sub);
+      margin: 0.55rem 0 0.2rem;
     }
+    .status {
+      margin-left: 0.4rem; padding: 0 0.4rem; border: 1px solid var(--border); border-radius: 3px;
+      font-size: 0.62rem; color: var(--sub);
+    }
+    .lead { font-size: 0.92rem; font-weight: 600; margin: 0.35rem 0 0.15rem; line-height: 1.55; }
+    .advisor { font-size: 0.84rem; color: var(--sub); margin: 0.15rem 0 0.3rem; }
+    .advisor strong { color: var(--text); }
     ul { padding-left: 1.25em; }
     li { font-size: 0.87rem; margin-bottom: 0.2rem; line-height: 1.5; }
 
@@ -87,11 +118,11 @@
     .tags { margin: 0.15rem 0 0.25rem; }
     .tag {
       display: inline-block;
-      background: #e8e8e8; color: #333;
-      font-size: 0.7rem; font-weight: 700;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #bbb;
+      background: #fff4ec; color: var(--accent);
+      font-family: var(--mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.02em;
+      padding: 0.12rem 0.5rem;
+      border-radius: 3px;
+      border: 1px solid #f3cfb4;
       margin: 0.1rem 0.2rem 0.1rem 0;
     }
 
@@ -107,6 +138,7 @@
 
     /* ── Publication ─────────────────────────────────── */
     .pub-entry { font-size: 0.87rem; line-height: 1.65; }
+    .pub-entry + .pub-entry { margin-top: 0.6rem; }
     .pub-entry a { color: var(--accent); }
 
     /* ── Awards / Certs ──────────────────────────────── */
@@ -120,37 +152,48 @@
     /* ── Print button ────────────────────────────────── */
     .btn-row { text-align: center; margin-top: 2rem; }
     .print-btn {
-      background: #111; color: #fff;
+      background: #ff8b3d; color: #14100c;
       border: none; border-radius: 6px;
       padding: 0.6rem 2rem;
       font-size: 0.9rem; font-weight: 600;
       cursor: pointer; letter-spacing: 0.02em;
     }
-    .print-btn:hover { background: #333; }
+    .print-btn:hover { background: #ffa161; }
 
     /* ── Print ───────────────────────────────────────── */
+    @page { margin: 1.4cm 1.6cm; }
     @media print {
       body { background: #fff; }
+      .topbar { display: none; }
       .page {
         margin: 0; border: none; box-shadow: none;
-        border-radius: 0; padding: 1.4cm 1.8cm;
+        border-radius: 0; padding: 0;
         max-width: none;
       }
       .btn-row { display: none; }
       a { color: inherit !important; text-decoration: none !important; }
       h2 { color: #000; border-bottom-color: #000; }
-      .tag { background: #f3f4f6; color: #374151; border: 1px solid #d1d5db; }
-      section { page-break-inside: avoid; }
+      .tag { background: #fff; color: #374151; border: 1px solid #d1d5db; }
+      /* let sections flow across pages; keep headings with their content and
+         never split a single entry or bullet */
+      h2, .sub-label, .two-col, .proj-title, .exp-title { break-after: avoid; }
+      li, .edu-entry, .pub-entry, .award-entry, .cert-entry, .lead-entry, .tags { break-inside: avoid; }
     }
 
     @media (max-width: 640px) {
       .page { padding: 1.5rem; margin: 0; border-radius: 0; border: none; }
+      .topbar { padding: 1rem 1.5rem; }
       .skills-grid { grid-template-columns: 1fr; }
       .skills-grid .sk-val { margin-bottom: 0.4rem; }
     }
   </style>
 </head>
 <body>
+
+<nav class="topbar" aria-label="Site">
+  <a href="../index.html">&larr; abhisheksubedi.name.np</a>
+  <button class="print-btn" onclick="window.print()">Save as PDF</button>
+</nav>
 
 <div class="page">
 
@@ -172,7 +215,7 @@
     <h2>Professional Summary</h2>
     <p>
       Graduate Mechanical Engineering student (MS, Dec 2026, GPA 4.0/4.0) specializing in experimental fluid
-      mechanics and thermal-fluid testing. Designed, built, and operates a supersonic wind tunnel research facility
+      mechanics and thermal-fluid testing. Designed, built, and operates the supersonic jet facility behind an MS thesis on particle drag,
       with Schlieren imaging, PIV/PTV, and a LabVIEW-based data acquisition and control system. Working knowledge
       of CFD (Ansys Fluent) through coursework and a battery thermal management project. Mechanical design in
       SolidWorks (CSWA certified) with prototype design-to-build experience. Seeking to apply hands-on
@@ -205,6 +248,46 @@
     </div>
   </section>
 
+  <!-- RESEARCH -->
+  <section>
+    <h2>Research</h2>
+    <div class="proj-entry">
+      <div class="proj-title">Thesis: Study of Coefficient of Drag in Particle-Laden Supersonic Flow</div>
+      <div class="advisor">Advisor: <strong>Dr. Omid Amili</strong> &middot; Fluids and Imaging Innovation Lab, University of Toledo</div>
+      <div class="tags">
+        <span class="tag">Schlieren Imaging</span>
+        <span class="tag">Particle Tracking (PTV)</span>
+        <span class="tag">Supersonic Flow</span>
+        <span class="tag">Multiphase Drag</span>
+        <span class="tag">Python &middot; MATLAB</span>
+        <span class="tag">LabVIEW</span>
+      </div>
+      <p class="lead">How hard does a supersonic jet push on a solid particle? Measuring that drag inside the shock cells of an underexpanded jet, on a facility and imaging system I built.</p>
+
+      <div class="sub-label">The problem</div>
+      <ul>
+        <li>Drag correlations for solid particles in supersonic flow disagree by a factor of two at the conditions that matter for solid rocket propulsion, cold-spray deposition, and high-speed particulate transport, and nearly all the data behind them come from shock tubes and ballistic ranges. The thesis measures drag in the complementary configuration, the quasi-steady shock-cell field of an underexpanded supersonic jet.</li>
+      </ul>
+
+      <div class="sub-label">Facility &amp; imaging</div>
+      <ul>
+        <li>Designed and built the facility: a 5.08&nbsp;mm converging nozzle fed through a conditioned settling chamber, with a LabVIEW data acquisition and control system for pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring.</li>
+        <li>Developed the facility's experimental techniques, Schlieren imaging for flow visualization and PIV/PTV for velocity measurement, from optical layout through calibration and validation. A Z-type schlieren system images the jet at 34,035 frames per second, resolving the shock train and individual bead silhouettes at once.</li>
+        <li>Inferred the gas state from the shock-cell spacing measured by autocorrelation (fully expanded Mach 1.60, 447&nbsp;m/s), and tracked beads of 342&ndash;675&nbsp;&mu;m into nozzle-referenced velocity and acceleration histories with a Python/MATLAB pipeline.</li>
+      </ul>
+
+      <div class="sub-label">Analysis <span class="status">ongoing</span></div>
+      <ul>
+        <li>Separating the non-drag forces experimentally by regressing acceleration on 1/<i>d</i><sub>p</sub> across particle sizes, which splits it into a drag group and a size-independent pressure-gradient group; drag-coefficient analysis at Re<sub>p</sub> &asymp; 20,000&ndash;40,000 is ongoing, for comparison against the Henderson, Loth et al., and Clift&ndash;Gauvin correlations.</li>
+      </ul>
+
+      <div class="sub-label">Presented</div>
+      <ul>
+        <li>Talk at the 78th Annual Meeting of the APS Division of Fluid Dynamics (2025) on developing open-loop supersonic jet rig facilities. Poster at the MEANES 2026 Ted Keith Distinguished Event Poster Session. High-speed footage cut into <em>Riding the Shock Train</em>, a short film prepared for the APS Gallery of Fluid Motion 2026.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- EXPERIENCE -->
   <section>
     <h2>Experience</h2>
@@ -217,10 +300,8 @@
       <div class="exp-org">University of Toledo, Toledo, OH</div>
       <div class="sub-label">Research</div>
       <ul>
-        <li>Designed, built, and operates a supersonic wind tunnel facility for experimental study of drag in particle-laden flow; developed the experimental techniques on the facility, including Schlieren imaging for flow visualization and PIV/PTV for quantitative velocity field measurement, from optical layout through calibration and validation of results.</li>
-        <li>Developed the facility's data acquisition and control system in LabVIEW, integrating pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring; documented the full system in specifications and test reports.</li>
+        <li>Designed, built, and operates the supersonic jet facility behind the thesis, including its LabVIEW data acquisition and control system (pressure and temperature instrumentation, valve sequencing, safety interlocks) and its schlieren and PIV/PTV diagnostics, documented in specifications and test reports.</li>
         <li>Built a Python particle-tracking pipeline for 34&nbsp;kHz schlieren footage and an experimental force-separation method; drag-coefficient analysis at particle Reynolds numbers of roughly 20,000&ndash;40,000 is ongoing.</li>
-        <li>Iterates hardware designs through prototype, test, and redesign cycles; correlates experimental measurements against analytical and simulation predictions.</li>
       </ul>
       <div class="sub-label">Teaching &mdash; Outstanding TA Award, College of Engineering, Spring 2026</div>
       <ul>
@@ -254,30 +335,6 @@
     </div>
   </section>
 
-  <!-- RESEARCH -->
-  <section>
-    <h2>Research</h2>
-    <div class="proj-entry">
-      <div class="proj-title">Thesis: Study of Coefficient of Drag in Particle-Laden Supersonic Flow</div>
-      <div style="font-size:0.84rem;color:var(--sub);margin:0.15rem 0 0.3rem;">Advisor: <strong style="color:var(--text);">Dr. Omid Amili</strong> &middot; Fluids and Imaging Innovation Lab, University of Toledo</div>
-      <div class="tags">
-        <span class="tag">Schlieren Imaging</span>
-        <span class="tag">PIV / PTV</span>
-        <span class="tag">Supersonic Flow</span>
-        <span class="tag">Particle Tracking</span>
-        <span class="tag">LabVIEW</span>
-      </div>
-      <ul>
-        <li>Measures the drag coefficient of solid particles in the quasi-steady shock-cell field of an underexpanded supersonic jet, the complement to the shock-tube and ballistic-range data behind existing correlations, on a facility I designed and built.</li>
-        <li>Developed the facility's experimental techniques, comprising Schlieren imaging for flow visualization and PIV/PTV for quantitative velocity field measurement, from optical layout through calibration and validation of results.</li>
-        <li>Developed the data acquisition and control system in LabVIEW: pressure and temperature instrumentation, automated valve sequencing, safety interlocks, and real-time monitoring, documented in specifications and test reports.</li>
-        <li>Imaged the jet with a Z-type schlieren system at 34,035 frames per second; inferred the gas state from the measured shock-cell spacing (fully expanded Mach 1.60, 447&nbsp;m/s) and tracked beads of 342&ndash;675&nbsp;&mu;m with a Python/MATLAB pipeline.</li>
-        <li>Separating the non-drag forces experimentally by regressing acceleration on 1/<i>d</i><sub>p</sub> across particle sizes; drag-coefficient analysis at Re<sub>p</sub> &asymp; 20,000&ndash;40,000 is ongoing, for comparison against the Henderson, Loth, and Clift&ndash;Gauvin correlations.</li>
-        <li>Gave a talk at the 78th Annual Meeting of the APS Division of Fluid Dynamics (2025) on developing open-loop supersonic jet rig facilities. Presented a poster at the MEANES 2026 Ted Keith Distinguished Event Poster Session; high-speed footage cut into <em>Riding the Shock Train</em>, a short film prepared for the APS Gallery of Fluid Motion 2026.</li>
-      </ul>
-    </div>
-  </section>
-
   <!-- PROJECTS -->
   <section>
     <h2>Academic and Engineering Projects</h2>
@@ -289,17 +346,6 @@
       </div>
       <ul>
         <li>Designed and fabricated a link-and-spring mechanism enabling adaptive radial contact for self-centering navigation within variable-diameter pipelines; handled full design-to-build cycle from concept through prototype, including part selection and assembly.</li>
-      </ul>
-    </div>
-
-    <div class="proj-entry">
-      <div class="proj-title">Vehicle Chassis, Body &amp; Powertrain Design: Shell Eco-Marathon Asia 2022 (Team Junkiri)</div>
-      <div class="tags">
-        <span class="tag">SolidWorks</span><span class="tag">EFI Retrofit &amp; Tuning</span><span class="tag">Assembly Drawings</span><span class="tag">Team Leadership</span>
-      </div>
-      <ul>
-        <li>Led the team's full SolidWorks chassis and body surface modeling for a fuel-efficiency competition vehicle; produced assembly drawings, managed the parts list, and coordinated the fabrication workflow through international competition in Indonesia, taking the design from concept to a running vehicle.</li>
-        <li>Retrofitted the vehicle's lawnmower engine with an electronic fuel injection (EFI) system in adherence to competition guidelines, and manually tuned it to run the engine at its most efficient operating state.</li>
       </ul>
     </div>
 
@@ -371,18 +417,13 @@
     </p>
   </section>
 
-  <!-- AWARDS -->
+  <!-- AWARDS & CERTIFICATIONS -->
   <section>
-    <h2>Awards &amp; Recognition</h2>
+    <h2>Awards &amp; Certifications</h2>
     <div class="award-entry">
       <div class="award-name">Outstanding Teaching Assistant Award</div>
       <div class="award-meta">University of Toledo, Dept. of Mechanical, Industrial and Manufacturing Engineering &middot; Spring 2026</div>
     </div>
-  </section>
-
-  <!-- CERTIFICATIONS -->
-  <section>
-    <h2>Training &amp; Certifications</h2>
 
     <div class="cert-entry">
       <div class="cert-name">SolidWorks Associate in Mechanical Design (CSWA)</div>
@@ -406,6 +447,21 @@
 
     <div class="lead-entry">
       <div class="two-col">
+        <span class="exp-title">Team Leader, Shell Eco-Marathon Asia 2022 (Team Junkiri)</span>
+        <span class="date">Aug 2021 &ndash; Oct 2022</span>
+      </div>
+      <div class="exp-org">Kathmandu University, Dhulikhel, Nepal</div>
+      <div class="tags">
+        <span class="tag">SolidWorks</span><span class="tag">EFI Retrofit &amp; Tuning</span><span class="tag">Assembly Drawings</span><span class="tag">Team Leadership</span>
+      </div>
+      <ul>
+        <li>Led the team's full SolidWorks chassis and body surface modeling for a fuel-efficiency competition vehicle; produced assembly drawings, managed the parts list, and coordinated fabrication through international competition in Indonesia, taking the design from concept to a running vehicle.</li>
+        <li>Retrofitted the vehicle's lawnmower engine with an electronic fuel injection (EFI) system in adherence to competition guidelines, and manually tuned it to run the engine at its most efficient operating state.</li>
+      </ul>
+    </div>
+
+    <div class="lead-entry">
+      <div class="two-col">
         <span class="exp-title">Vice President, Association of Mechanical Engineering Students (AMES)</span>
         <span class="date">May 2020 &ndash; Aug 2021</span>
       </div>
@@ -425,21 +481,10 @@
         <li>Contributed to organizing the inaugural University Scholar Conference at Kathmandu University; coordinated logistics and supported the event's execution.</li>
       </ul>
     </div>
-
-    <div class="lead-entry">
-      <div class="two-col">
-        <span class="exp-title">Team Leader, Shell Eco-Marathon (Team Junkiri)</span>
-        <span class="date">Aug 2021 &ndash; Oct 2022</span>
-      </div>
-      <div class="exp-org">Kathmandu University, Dhulikhel, Nepal</div>
-      <ul>
-        <li>Led full vehicle chassis and surface modeling in SolidWorks; managed fabrication workflow and coordinated international competition logistics in Indonesia. Retrofitted the vehicle's lawnmower engine with an electronic fuel injection (EFI) system in adherence to competition guidelines and manually tuned it to run at its most efficient state.</li>
-      </ul>
-    </div>
   </section>
 
   <div class="btn-row">
-    <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+    <button class="print-btn" onclick="window.print()">Save as PDF</button>
   </div>
 
 </div>
