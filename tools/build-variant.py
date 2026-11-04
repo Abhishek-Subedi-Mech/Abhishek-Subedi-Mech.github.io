@@ -30,7 +30,7 @@ EDITS = [
 
     ("meta description",
      '<meta name="description" content="Abhishek Subedi, Mechanical Engineer and MS candidate at the University of Toledo. Supersonic wind tunnel design, Schlieren imaging and PIV, thermal systems, and SolidWorks CAD.">',
-     '<meta name="description" content="Abhishek Subedi, MS Mechanical Engineering candidate (Dec 2026) specializing in thermal modeling, CFD simulation, EV battery thermal management, and experimental fluid mechanics.">'),
+     '<meta name="description" content="Abhishek Subedi, MS Mechanical Engineering candidate (May 2027) specializing in thermal modeling, CFD simulation, EV battery thermal management, and experimental fluid mechanics.">'),
 
     # a targeted landing page should not compete with the main page in search
     ("canonical to robots",
@@ -46,8 +46,8 @@ EDITS = [
      '<meta property="og:title" content="Abhishek Subedi | Thermal Modeling Engineer">'),
 
     ("og:description",
-     '<meta property="og:description" content="Supersonic wind tunnel design, Schlieren imaging and PIV, thermal systems, and SolidWorks CAD. MS Mechanical Engineering, University of Toledo, December 2026.">',
-     '<meta property="og:description" content="Thermal modeling, CFD simulation, and EV battery thermal management, backed by experimental fluid mechanics. MS Mechanical Engineering, University of Toledo, December 2026.">'),
+     '<meta property="og:description" content="Supersonic wind tunnel design, Schlieren imaging and PIV, thermal systems, and SolidWorks CAD. MS Mechanical Engineering, University of Toledo, May 2027.">',
+     '<meta property="og:description" content="Thermal modeling, CFD simulation, and EV battery thermal management, backed by experimental fluid mechanics. MS Mechanical Engineering, University of Toledo, May 2027.">'),
 
     ("twitter:title",
      '<meta name="twitter:title" content="Abhishek Subedi | Mechanical Engineer">',

@@ -38,7 +38,7 @@ function updateActiveLink() {
 // ─── TYPEWRITER ──────────────────────────────────────────────────────────────
 
 const phrases = [
-  'MS Candidate · University of Toledo · Dec 2026',
+  'MS Candidate · University of Toledo · May 2027',
   'Supersonic Flow Researcher',
   'Schlieren Imaging & PIV',
   'SolidWorks CSWA Certified',
