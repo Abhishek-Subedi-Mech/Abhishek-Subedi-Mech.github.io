@@ -29,7 +29,7 @@ EDITS = [
      "<title>Abhishek Subedi | Thermal Modeling Engineer</title>"),
 
     ("meta description",
-     '<meta name="description" content="Abhishek Subedi, Mechanical Engineer and MS candidate at the University of Toledo. Supersonic wind tunnel design, Schlieren imaging and PIV, thermal systems, and SolidWorks CAD.">',
+     '<meta name="description" content="Abhishek Subedi, Mechanical Engineer and MS candidate at the University of Toledo. Supersonic flow experiments, Schlieren imaging and particle tracking, thermal systems, and SolidWorks CAD.">',
      '<meta name="description" content="Abhishek Subedi, MS Mechanical Engineering candidate (May 2027) specializing in thermal modeling, CFD simulation, EV battery thermal management, and experimental fluid mechanics.">'),
 
     # a targeted landing page should not compete with the main page in search
@@ -46,7 +46,7 @@ EDITS = [
      '<meta property="og:title" content="Abhishek Subedi | Thermal Modeling Engineer">'),
 
     ("og:description",
-     '<meta property="og:description" content="Supersonic wind tunnel design, Schlieren imaging and PIV, thermal systems, and SolidWorks CAD. MS Mechanical Engineering, University of Toledo, May 2027.">',
+     '<meta property="og:description" content="Supersonic flow experiments, Schlieren imaging and particle tracking, thermal systems, and SolidWorks CAD. MS Mechanical Engineering, University of Toledo, May 2027.">',
      '<meta property="og:description" content="Thermal modeling, CFD simulation, and EV battery thermal management, backed by experimental fluid mechanics. MS Mechanical Engineering, University of Toledo, May 2027.">'),
 
     ("twitter:title",
@@ -54,7 +54,7 @@ EDITS = [
      '<meta name="twitter:title" content="Abhishek Subedi | Thermal Modeling Engineer">'),
 
     ("twitter:description",
-     '<meta name="twitter:description" content="Supersonic wind tunnel design, Schlieren imaging and PIV, thermal systems, and SolidWorks CAD.">',
+     '<meta name="twitter:description" content="Supersonic flow experiments, Schlieren imaging and particle tracking, thermal systems, and SolidWorks CAD.">',
      '<meta name="twitter:description" content="Thermal modeling, CFD simulation, and EV battery thermal management, backed by experimental fluid mechanics.">'),
 
     ("JSON-LD job title",

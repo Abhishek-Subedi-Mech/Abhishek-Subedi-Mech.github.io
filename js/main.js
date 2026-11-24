@@ -40,7 +40,7 @@ function updateActiveLink() {
 const phrases = [
   'MS Candidate · University of Toledo · May 2027',
   'Supersonic Flow Researcher',
-  'Schlieren Imaging & PIV',
+  'Schlieren Imaging & PTV',
   'SolidWorks CSWA Certified',
   'Open to Work',
 ];
