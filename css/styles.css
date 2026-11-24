@@ -374,6 +374,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 700; line-height: 1.1
   color: var(--text-3); border-left: 1px solid var(--signal-dim);
   padding: 3px 0 3px 14px; margin: 22px 0 0;
 }
+.research-note a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
 .method-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 24px; }
 
 /* headline results: the about stat-cards, four across, label above the number */
